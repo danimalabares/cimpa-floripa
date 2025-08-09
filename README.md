@@ -30,9 +30,10 @@ Ideally we would use ``make``, for example
 ``make derived-categories-of-sheaves.pdf``
 
 but for some reason this isn't working anymore.
-Official Stacks Project repo uses a python script to compile the whole book. 
-I didn't manage to set that working, but that would be great if anyone manages
-to set that working.
+Official Stacks Project repo uses a python script to compile the whole book,
+i.e. all tex files in one pdf. 
+I didn't manage to set that working, but it would be great if anyone figures
+out how to do it.
 
 This works:
 

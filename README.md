@@ -16,18 +16,18 @@ guidelines of how to write the tex files.
 To compile I open a Terminal, go to the directory where I have the local files
 of the repository and run the command
 
-``latexmk -pdf derived-categories-lyalya.tex``
+``latexmk -pdf derived-categories-of-sheaves.tex``
 
 Or
 
-``latexmk -pdf -pvc complex-geometry.tex``
+``latexmk -pdf -pvc derived-categories-of-sheaves.tex``
 
 for continuous compilation (which is most useful when editing a file).
 
 
 Ideally we would use ``make``, for example
 
-``make derived-categories-lyalya.pdf``
+``make derived-categories-of-sheaves.pdf``
 
 but for some reason this isn't working anymore.
 Official Stacks Project repo uses a python script to compile the whole book. 

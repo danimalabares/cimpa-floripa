@@ -7,7 +7,7 @@
 Minicourse by Michel Brion, CIMPA school Florianópolis 2025.
 
 Notes at 
-\href{http://github.com/danimalabares/cimpa-floripa}
+\href{http:/\!/github.com/danimalabares/cimpa-floripa}
 {github.com/danimalabares/cimpa-floripa}
 
 \bigskip\noindent
@@ -33,6 +33,9 @@ quotients.
 \item GIT (affine case).
 \item GIT (general case).
 \end{enumerate}
+
+\section{Introduction}
+\label{section-introduction}
 
 \begin{proposition}
 \label{proposition-1}
@@ -92,10 +95,10 @@ distinct and $n_i$ are positive integers with some $n$.
 \end{enumerate}
 \end{example}
 
-\subsection*{Local structure of quotients}
-\label{subsection-local-structure-of-quotients}
+\section{Local structure of quotients}
+\label{section-local-structure-of-quotients}
 
-See Mumford, Abelian Varieties.
+See \cite{AVar}.
 
 \begin{definition}
 \label{definition-free-locus}
@@ -135,7 +138,7 @@ Done in lecture.
 Then we have the {\it Hilbert scheme characteristic morphism}
 \begin{align*}
 \gamma: \text{Hilb}_n(Z) &\longrightarrow Z^{(n)} \\
-W\subset Z &\longmapsto \sum_{z \in Z}\dim (\mathcal{O}_{W,z}z
+W\subset Z &\longmapsto \sum_{z \in Z}\dim (\mathcal{O}_{W,z}z)
 \end{align*}
 where $W$ must be {\bf finite of length }$n$. See Binger, Linear determinants
 (older) or J. Bertin, The punctual Hilbert Scheme.
@@ -144,8 +147,8 @@ If $Z$ is smooth of dimension 1 then $\gamma$ is an isomorphism. If $Z$ is of
 dimension 2 then $\gamma$ is a resolution. In general $\gamma$ is an isomorphism
 above $Z_{f_2}^{(n)}$.
 
-\subsection*{Linear algebraic groups}
-\label{subsection-linear-algebraic-groups}
+\section{Linear algebraic groups}
+\label{section-linear-algebraic-groups}
 \begin{definition}
 \label{definition-algebraic-group}
 An {\it algebraic group} is a variety $G$ equipped with morphisms
@@ -286,7 +289,7 @@ A finite dimensional vector space $V$ is called a {\it $G$-module} if $V$ is equ
 with an action of $G$ via a homomorphism of algebraic groups 
 $G \to \text{GL}(V)$.
 
-A  {\it $G$-module} is a vector space $V$ equipped with a linear action og the
+A  {\it $G$-module} is a vector space $V$ equipped with a linear action of the
 group $G$ such that $V=$ union of finite dimensional $G$-submodules.
 \end{definition}
 
@@ -320,8 +323,8 @@ nonzero fixed point.
 As an example consider $G=\text{SL}_2$. (We saw that it is not linearly
 reductive in the sense described in the next section.)
 
-\subsection*{Quotients by linearly reductive groups}
-\label{subsection-quotients-by-linearly-reductive-groups}
+\section{Quotients by linearly reductive groups}
+\label{section-quotients-by-linearly-reductive-groups}
 
 \begin{definition}
 \label{definition-linearly-reductive-group}
@@ -444,7 +447,7 @@ $$
 $$
 \end{example}
 
-{\bf Notation:} $Y=X//G$, the space of closed orbits.
+{\bf Notation:} $Y=X/\!/G$, the space of closed orbits.
 
 \begin{definition}
 \label{definition-stable-point}
@@ -482,7 +485,7 @@ The final assertion $X^s \to Y^s$ is similar to what we did. No deep arguments.
 \begin{example}
 \label{example-action-of-SL2-on-forms}
 $G=\text{SL}_n$ acts on $X=k[x_1,\ldots,x_n]_d$ by linear change of variables.
-Let's consider some values. If $d=1$, then the quotient is  $X//G=\text{pt}$.
+Let's consider some values. If $d=1$, then the quotient is  $X/\!/G=\text{pt}$.
 For $d=2$, the quadractic forms, we have the discriminant $\Delta$ as an 
 invariant, and in fact $\mathcal{O}(\Delta)=k[\Delta]$ {\bf (A nice exercise!)}. 
 Actually it looks like $\pi=\Delta:X \to \mathbb{A}^1$, and the stabilizer of 
@@ -522,13 +525,13 @@ $$
 which is a graded, finitely generated algebra, then $X=\text{Proj}R(X,L)$. If
 $G$ acts on $R(X,L)$ ``compatibly'', then $R(X,L)^G$ is finitely generated:
 $$
-\text{Proj}R(X,L)^G=X//G
+\text{Proj}R(X,L)^G=X/\!/G
 $$
 and we get a birational map
 $$
 \xymatrix{
-X\ar[r]^{bir}& X//G\\
-U\ar[u]_{hook}\ar[ur]^{\pi}
+X\ar@{.>}[r]& X/\!/G\\
+U\ar@{^{(}->}[u]\ar[ur]^{\pi}
 }
 $$
 where $U$ is the domain of definition.
@@ -606,7 +609,7 @@ finally quoetient by $\text{SL}_{n+1}$:
 \{\text{isom. classes}\}&=\mathbb{P}(k[x_0,\ldots,x_n]_d)_{\Delta}
 /\text{SL}_{n+1}\overset{\text{open}}{\hookrightarrow }\\
 \mathbb{P}(\cdot)^1/\text{SL}_{n+1}& \hookrightarrow  
-\mathbb{P}(\cdot)^n//\text{SL}_{n+1}
+\mathbb{P}(\cdot)^n/\!/\text{SL}_{n+1}
 \end{align*}
 a projective variety, normal, very singular.
 \end{example}
@@ -628,7 +631,7 @@ $\text{Hom}(S,[X/G])$ is a category, not a set as usual. Its objects are
 $$
 \xymatrix{
 P\ar[d]_{\substack{\text{principal} \\ \mathbb{G}\text{-bundle}}}
-\ar[r]^{\substack{G\text{-equivariant} \\ \text{morphism }b}}&X\\
+\ar[rr]^{\substack{G\text{-equivariant} \\ \text{morphism }b}}&&X\\
 S
 }
 $$
@@ -636,15 +639,15 @@ and morphisms are
 $$
 \xymatrix{
 &X\\
-P\ar[ur]^{b'}\ar[rr]^\varphi \ar[dr]&  &  P\ar[ul]^b\ar[dl]\\
+P\ar[ur]^{b'}\ar[rr]^\varphi \ar[dr]&  &  P\ar[ul]_b\ar[dl]\\
 &S
 }
 $$
 (continues…)
 \end{proof}
 
-\subsection{Hilbert-Mumford criterion}
-\label{subsection-Hilbert-Mumford-criterion}
+\section{Hilbert-Mumford criterion}
+\label{section-Hilbert-Mumford-criterion}
 
 \begin{definition}
 \label{definition-one-parameter-subgroup}
@@ -687,7 +690,7 @@ $G\cdot v$ is affine $\iff$ $G_v$ is linearly reductive.
 \end{proposition}
 
 \begin{proof}
-($\implies$) $G_v = H \iff G\cdot v G/H=G//H$.
+($\implies$) $G_v = H \iff G\cdot v G/H=G/\!/H$.
 
 ($\impliedby$) We show that the functor
 \begin{align*}
@@ -734,20 +737,20 @@ If $d$ is odd then $V^s=V^{ss}$. If $d$ is even then $x^{d/2}y^{d/2}$ has a
 closed orbit and is fixed by $\\text{Im}(\lambda)$.
 \end{example}
 
-\subsection*{Hyperelliptic curves}
-\label{subsection-hyperelliptic-curves}
+\section{Hyperelliptic curves}
+\label{section-hyperelliptic-curves}
 
 Let $C \to \mathbb{P}^1$ be a smooth projective curve of degree $2$, genus $g$,
 branched in $2g+2$ distinct points, uniquely determined by the branch divisor.
 \begin{gather*}
 \{\text{isomorphism classes of hyperellipetic curves of genus $g$}\}\\
 =\mathbb{P}(V_{2g+2})_\Delta/\text{SL}_2 \hookrightarrow
-\mathbb{P}(V_{2g+2})^{ss}//\text{SL}_2
+\mathbb{P}(V_{2g+2})^{ss}/\!/\text{SL}_2
 \end{gather*}
 projective normal of dimension $2g-3$.
 
-\subsection*{Local structure of quotients}
-\label{subsection-local-structure-of-quotients}
+\section{Local structure of quotients}
+\label{section-local-structure-of-quotients}
 $X$ affine $G$-variety, $G$ reductive, $x\in X$ such that $G\cdot x$ is closed,
 $H=G_x$ (reductive).
 
@@ -757,10 +760,10 @@ There exists an affine $H$-stable (locally ?) subvariety $S \subset X$ such that
 the sequence
 $$
 \xymatrix{
-(g,s)H\ar[r]^{\text{mapsto}}&g\cdot s\\
+(g,s)H\ar@{|->}[r]&g\cdot s\\
 (G\times S)/H\ar[d]\ar[r]&  X\ar[d]\\
-S//H\ar[r]&  X//G\\
-x\ar[r]_{mapsto} &\overline{x}
+S/\!/H\ar[r]&  X//G\\
+x\ar@{|->}[r]&\overline{x}
 }
 $$
 $h(g,s)=(gh^{-1},hs)$ is cartesian with étale horizontal arrows. If $x \in X$ is
@@ -778,7 +781,7 @@ A corollary:
 
 \begin{lemma}
 \label{lemma-}
-If $G_x=e$ then $X \to X//G$ is a principal $G$-bundle in a $G$-stable
+If $G_x=e$ then $X \to X/\!/G$ is a principal $G$-bundle in a $G$-stable
 neighbourhood of $x$.
 \end{lemma}
 
@@ -790,7 +793,7 @@ $G$ finite, works with $S\subset X$ open.
 \begin{exercise}
 \label{exercise-}
 $G=\text{SL}_2$, $V=V_G$, $x^3y^3 \in V_G$, stabilizer
-$=\mathbb{G}_m=\text{Im}(\lambda)$. Prove that $V_G//\text{SL}_2$ is singular at
+$=\mathbb{G}_m=\text{Im}(\lambda)$. Prove that $V_G/\!/\text{SL}_2$ is singular at
 the image of $x^3y^3$. ($S=\mathbb{G}_m$-module with weights $-6,-4,0,4,6$.)
 {\bf Hint.} To
 check for non-smoothness you can check that $\mathcal{O}(S)^{\mathbb{G}_m}$ is
@@ -798,6 +801,7 @@ not a polynomial ring; this is equivalent to non-smoothness for the quotient,
 and it should be easy to find: you just find that there are too many generators.
 \end{exercise}
 
-
+\bibliography{my}
+\bibliographystyle{amsalpha}
 
 \end{document}

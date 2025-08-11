@@ -1,0 +1,270 @@
+\input{preamble}
+\begin{document}
+
+\title{Kummer Type Hyperkähler Varieties}
+\maketitle
+
+Minicourse by Xiaolei Zhao, CIMPA school Florianópolis 2025.
+
+Notes at 
+\href{http://github.com/danimalabares/cimpa-floripa}
+{github.com/danimalabares/cimpa-floripa}
+
+\bigskip\noindent
+
+{\bf Abstract.} Examples of noncommutative K3 surfaces arise from semiorthogonal
+decompositions of the bounded derived category of certain Fano varieties. The
+most interesting cases are those of cubic fourfolds and Gushel-Mukai varieties
+of even dimension. Using the deep theory of families of stability conditions,
+locally complete families of hyperkähler manifolds deformation equivalent to
+Hilbert schemes of points on a K3 surface have been constructed from moduli
+spaces of stable objects in these noncommutative K3 surfaces. On the other hand,
+an explicit description of a locally complete family of hyperkähler manifolds
+deformation equivalent to a generalized Kummer variety is not available from
+classical geometry. In this lecture series, we will construct families of
+noncommutative abelian surfaces as equivariant categories of the derived
+category of K3 surfaces which specialize to Kummer K3 surfaces. Then we will
+explain how to induce stability conditions on them and produce examples of
+locally complete families of hyperkähler manifolds of Kummer type. Based on
+joint work with Arend Bayer, Alex Perry and Laura Pertusi. 
+
+\bigskip\noindent
+\tableofcontents
+\bigskip\noindent
+
+\noindent
+
+\section{K3 surfaces and Hyperkähler varieties}
+\label{section-K3-surfaces-and-hyperkahler-varieties}
+
+\begin{definition}
+\label{definition-K3-surface}
+A {\it K3 surface} (over $\mathbb{C}$) is a smooth projective surface $S$ such
+that $\omega_S \cong \mathcal{O}_S$ and $\pi_1(S)=1$.
+\end{definition}
+
+\begin{example}[K3 surfaces]
+\label{example-K3-surfaces}
+\begin{enumerate}
+\item $S\subset \mathbb{P}^3$ of degree 4. A straightforward computation shows
+the conditions of the definition are verified.
+\item $S \to \mathbb{P}^2$ double cover ramified along a degree 6 curve.
+\end{enumerate}
+\end{example}
+
+\begin{definition}
+\label{definition-hyperkahler-variety}
+A {\it hyperkähler} variety is a smooth projective variety $X$ such that
+\begin{enumerate}
+\item $\pi_{1}(X)=1$ 
+\item $H^{0}(X,\Omega_X^2)=\mathbb{C} \omega$ (i.e. the space of global
+holomorphic 2-forms is one dimensional) where $\omega$ is holomorphically
+symplectic.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+\label{remark-hyperkahler}
+If $X$ is hyperkähler, it must be even dimensional and $\omega_X=\mathcal{O}_X$.
+\end{remark}
+
+\begin{remark}
+\label{remark-Beauville-Bogomolov}
+We just mention the name of Beauville-Bogomolov theorem.
+\end{remark}
+
+For a while people were looking for examples of hyperkähler varieties.
+
+\begin{example}[Hyperkähler varieties]
+\label{example-hyperkahler}
+\begin{enumerate}
+\item K3 surface $S$.
+\item $X=S^{[n]}$ Hilbert scheme of $n$ points on K3 surface. (Moduli space of
+stable sheaves on K3 $S$ of rank 1,  $c_1=0$, $c_2=0$.)
+\item $\mathcal{M}_H(s,v)=$ moduli of $H$-stable sheaves on $S$ of class $v$.
+($v$ primitive, $H$ is $v$-generic.) (Recall the example in Cristina's course
+where we studied how the moduli changes under changes in the polarization $H$.)
+Let $[E] \in \mathcal{M}_H(s,v)$. We have the Yoneda map
+ $$
+T_{[E]}\mathcal{M}\cong \text{Ext}^1(E,E)\times \text{Ext}^1(E,E)
+\to \text{Ext}^2(E,E)\overset{\substack{S \text{ is}\\\text{ a K3}}}{\cong}\Hom(E,E)^*\cong \mathbb{C}
+$$
+where the first factor product of $\text{Ext}^1(E,E)\times \text{Ext}^1(E,E)$ is
+associated to first arrow, the second factor to the second arrow, of the
+following diagram:
+$$
+E \to E[1] \to E[2]
+$$
+This moduli space is always of Picard rank 2.
+\item $Y \subset \mathbb{P}^5$ a smooth cubic fourfold.
+$$
+F(Y)=\{[\ell] \in \text{Gr}(2,6)|\ell \subseteq Y\}
+$$
+is a hyperkähler 4-fold. For a specific choice $Y_0$ of hyperkähler 4-fold in
+the moduli of smooth cubic 4-folds (which is 20-dimensional) we find $F(Y_0)$ is
+deformation equivalent to $S^{[2]}$ where $S$ is a K3 surface.
+\end{enumerate}
+\end{example}
+
+\medskip\noindent
+Here is a general picture:
+\iffalse$$
+\xymatrix{
+\substack{\text{cubic 4-fold $Y$} \\ D^b(Y)}\ar[dr]&  &  
+\substack{\text{moduli of} \\ \text{stable objects}\\ \text{in $\text{Ku}_Y$ as}
+\\ \text{HK variety}}\\
+&\substack{\text{sod K3} \\ \text{cat conditions} \\ \text{Ku}_Y }
+\ar[ur]_{\substack{\text{stability} \\ \text{conditions}}}
+$$\fi
+
+\medskip\noindent
+Let $X,Y$ be projective smooth varieties and $f:X\to Y$. Consider the functors
+$$
+Rf_*:D^b(X) \to D^b(Y)\qquad Lf^*:D^b(Y) \to D^b(X)
+$$
+for $F,G \in D^b(X)$, $F\overset{L}{\otimes}G \in D^b(X)$. {\bf Convention:} we
+drop the $R$ and $L$.
+
+\begin{definition}
+\label{definition-}
+Let $K \in D^b(X \times Y)$. The {\it Fourier-Mulai functor} is
+\begin{align*}
+\Phi_K: D^b(X) &\longrightarrow D^b(Y) \\
+F &\longmapsto \text{pr}_{Y,*}(\text{pr}_X^*F \otimes K)
+\end{align*}
+where we are using our convention --- all functors here are derived. Here the
+maps are
+$$
+\xymatrix{
+& X \times Y\ar[dl]_{\text{pr}_X}\ar[dr]^{\text{pr}_Y}\\
+X& & Y
+}
+$$
+\end{definition}
+
+\begin{example}
+\label{example-Fourier-Mukai}
+$f:X \to Y$ and $\Gamma_f \equiv X \times Y$ graph. Then
+$\Phi_{\mathcal{O}_{p_f}}=f_*$.
+\end{example}
+
+\begin{theorem}[Orlov]
+\label{theorem-Orlov}
+If $F:D^b(X) \to D^b(Y)$ is an equivalence, then $\exists ! K \in D^b(X \times
+Y)$ such that $F \cong \Phi_K$.
+\end{theorem}
+
+\begin{theorem}
+\label{theorem-preserved-by-derived-equivalence}
+The following are preserved by derived equivalence:
+\begin{enumerate}
+\item (Bondal-Orlov.) $\dim X$.
+\item (Bondal-Orlov.) $\bigoplus_{m \geq 0}H^{0}(X,\pm m K_X)$.
+\item $H^{*}(X,\mathbb{Q})$, and $\bigoplus_{p-q=i}H^{p,q}(X)$ for any $i \in
+\mathbb{Z}$.
+\end{enumerate}
+\end{theorem}
+
+\medskip\noindent
+{\bf Non-trivial equivalences.} $S$ a K3 surface. $H^{2}(S,\mathbb{Z})$.
+\begin{itemize}
+\item (Hodge decomposition.) 
+$H^{2}(S,\mathbb{C})\cong H^{2,0} \oplus H^{1,1} \oplus H^{0,2}$.
+\item Pairing on $H^{2}(S,\mathbb{Z})$ given by cup product.
+\end{itemize}
+
+\begin{theorem}[Torelli for K3]
+\label{theorem-Torelli-for-K3}
+Two K3 surfaces $S,S'$ are isomorphic if and only if there exists a Hodge
+isometry $\varphi:H^{2}(S,\mathbb{Z})\to H^{2}(S',\mathbb{Z})$ 
+(i.e. an isomorphism that preserves the Hodge decomposition and the pairing).
+\end{theorem}
+
+This was the classical content.
+
+\subsection{Mukai lattice}
+\label{subsection-Mukai-lattice}
+$$
+\tilde{H}(S,\mathbb{Z})
+=H^{0}(S,\mathbb{Z})\oplus H^{2}(S,\mathbb{Z})\oplus H^{4}(S,\mathbb{Z})
+$$
+\begin{itemize}
+\item Weight 2 Hodge structure
+$$
+\tilde{H}^{2,0}=H^{2,0}\qquad \tilde{H}^{1,1}=H^0\oplus H^{1,1}\oplus H^2
+\qquad \tilde{H}^{0,2}\cong H^{0,2}.
+$$
+\item Pairing:
+$$
+\left<(a,b,c),(a',b',c')\right>=bb'-ac'-a'c
+$$
+\end{itemize}
+
+\begin{theorem}[Mukai, Orlov]
+\label{theorem-Mukai-Orlov}
+If $S,S'$ are K3 surfaces, then $D^b(S) \cong D^b(S')\iff
+\tilde{H}(S,\mathbb{Z})\underset{\varphi}{\cong}\tilde{H}(S',\mathbb{Z})$ Hodge
+isometry.
+\end{theorem}
+
+\subsection{Mukai vector}
+\label{subsection-Mukai-vector}
+
+Let $K_0(S)$ be the free abelian group generated by $\Ob(D^b(S))$. Consider
+$$
+v:K_0(S)\to \tilde{H}(S;\mathbb{Z})
+$$
+Where $[F]=[E]+[G]$ if $E \to F \to G \xrightarrow{+1}$ is a distinguished
+triangle.
+$$
+v:[E] \to \text{ch}(E)\cdot \sqrt{\det(S)}
+$$
+where $\text{ch}(E)$ is the Chern character.
+$$
+\left<v(E),v(F)\right>=-\chi(E,F),
+$$
+where $\chi(E,F):=\sum(-1)^i\dim\text{Ext}^i(E,F):=\Hom_{D^b(S)}(E,F[i])$.
+
+\begin{proof}[Proof of the backward implication of Mukai-Orlov theorem]
+Let 
+\begin{align*}
+\varphi: \tilde{H}(S,\mathbb{Z}) &\longrightarrow \tilde{H}(S',\mathbb{Z}) \\
+(0,0,1) &\longmapsto v\\
+(-1,0,0) &\longmapsto v'
+\end{align*}
+The intersection matrix of $v$ and $v'$ is
+$$
+U=\begin{pmatrix}
+0&1\\ 
+1&0
+\end{pmatrix}
+$$
+For simplicity assume that $v$ is of positive rank. ($V=(a,b,c)$, where $a\in
+H^0$ is positive.)
+
+The heart of the proof uses the following result by Mukai. There exists a
+nonempty moduli space $\mathcal{M}$ of stable sheaves on $S'$ of class $v$
+$\implies$ $S'$ is a K3 surface!
+$$
+0=\chi(v,v)=\underbrace{\Hom(E,E)}_{=1}-\underbrace{\text{ext}^1(E,E)}_{=2}
++\underbrace{\text{ext}^2(E,E)}_{=1}
+$$
+$v\cdot v'=1\implies \mathcal{M}$ is a fine moduli space. There exists a
+universal family $D^b(S \times M)\ni \mathcal{E} \to S' \times M$.
+
+{\bf Claim.} $\Phi_{\mathcal{E}}:D^b(S')\xrightarrow{\cong} D^b(\mathcal{M})$
+(general criteria).
+
+Now $\tilde{H}(S,\mathbb{Z})\xrightarrow{\varphi,\cong} \tilde{H}(S',\mathbb{Z}$
+$$
+\xymatrixrowsep{1em}
+\xymatrix{
+\tilde{H}(S,\mathbb{Z})\ar[r]^{\varphi,\cong}&\tilde{H}(S',\mathbb{Z})
+\ar[r]^{\Phi_{\mathcal{E}}}&\overset{\vee}{H}(M,\mathbb{Z})\\
+(0,0,1)\ar@{|->}[r]&  v \ar@{|->}[r]& (0,0,1)\\
+(1,0,0)\ar@{|->}[rr]& & (1,0,0)
+}
+$$
+\end{proof}
+
+\end{document}

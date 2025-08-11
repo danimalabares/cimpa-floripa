@@ -50,12 +50,12 @@ give some discrete invariants. And give structure of scheme which ``respects
 limits''.
 
 {\bf Functor of points.} For a given scheme $X$, the set
-$\text{Hom}(\text{Spec}\mathbb{C},X)$ is the set of points of $X$ (why?). This motivates
+$\text{Hom}(\text{Spec}\mathbb{C},X)$ is the set of points of $X$. This motivates
 defining a functor $h_X:\text{Sch}\to \text{Sets}$ by $h_X(S)=\text{Hom}(S,X)$,
 and morphisms are just mapped via composition.
 
-And there's more: given a morphism of schemes $\varphi:X\to Y$ we can produce a
-(natural transformation?) $h_\varphi:h_X \to h_Y$.
+And there's more: given a morphism of schemes $\varphi:X\to Y$ we can produce
+ $h_\varphi:h_X \to h_Y$.
 
 \begin{slogan}
 Schemes are functors.
@@ -86,7 +86,7 @@ $$
 and morphisms are mapped by pullback.
 \end{example}
 
-I think here flat accounts for a continuously varying family of copies of $X$
+Here, ``flat'' accounts for a continuously varying family of copies of $X$
 over $S$, i.e. the product $X \times S$.
 
 \begin{theorem}
@@ -133,9 +133,11 @@ and equivalence is given by: $\mathcal{F}\sim \mathcal{G}$ iff there exists a
 line bundle $\mathcal{L}$ on $S$ such that 
 $\mathcal{F}\cong \mathcal{G}\otimes\pi^*S$.
 
+\medskip\noindent
 {\bf Problem.} $X:=\mathbb{P}^1$ and rank 2 sheaves on $\mathbb{P}^1$. In this
 case […]
 
+\medskip\noindent
 {\bf Fact.} Fine moduli spaces are rare.
 
 \begin{definition}
@@ -150,22 +152,24 @@ h_X \to h_Y$.
 \end{itemize}
 \end{definition}
 
+\medskip\noindent
 {\bf Summary.}
 \begin{enumerate}
 \item Schemes are functors.
 \item The best moduli spaces are represented functors, they are called fine.
-These have universal families, and all [all what?] are pullbacks of from the
+These have universal families, and all are pullbacks of from the
 universal family.
 \end{enumerate}
 
-\section*{Discrete data}
+\section{Discrete data}
 \label{section-discrete-data}
 
 $X$ projective and $H$ an ample divisor on $X$. The {\it Hilbert polynomial} is
 $$
 P(\mathcal{F},m):=\chi(\mathcal{F}\otimes \mathcal{O}(m))
-$$.
+$$
 
+\medskip\noindent
 {\bf Fact.} $P(\mathcal{F},m)=\sum_{i=0}^{\dim
 X}\alpha_i(\mathcal{F})\frac{m^i}{i!}$.
 
@@ -179,8 +183,13 @@ $P(\mathcal{F},m):=\frac{P(\mathcal{F},m)}{\alpha_d(\mathcal{F})}$. The {\it
 slope} of $\mathcal{F}$ is
 $\mu_H(\mathcal{F}):=\frac{c_1(\mathcal{F})H^{d-1}}{\text{rk}\mathcal{F}}$.
 
-Example (curve of genus $g$ using Rieman-Roch).
+\begin{example}[Curve of genus $g$ using Riemann-Roch]
+\label{example-curve-of-genus-g-using-Riemann-Roch}
+(Missing.)
+\end{example}
 
+\medskip\noindent
+Here begin the contents of the second lecture.
 \begin{definition}
 \label{definition-Gieseker-and-mu-stability}
 $\mathcal{F}$ is {\it Gieseker/$\mu$-semistable} w.r.t. $H$ if
@@ -260,7 +269,7 @@ L$ is semistable.
 \end{itemize}
 \end{example}
 
-Now we explain some {\bf easy criteria.} (I think it's easy because we find a
+Now we explain some {\bf easy criteria.} (We shall find a
 condition on cohomology that is equivalent to stability.)
 
 \begin{definition}
@@ -303,7 +312,7 @@ exists a unique filtration $0 \hookrightarrow  \mathcal{F}_0\subset
 \mathcal{F}_1\subset\ldots\subset\mathcal{F}_m=\mathcal{F}$ with
 $E_i=\mathcal{F}_i/\mathcal{F}_{i+1}$ $\mu$-semi-stable w.r.t. $H$ and
 $\mu(E_1)>\mu(E_2)>\ldots>\mu(E_m)$. This is called {\it Harder-Narorimnan
-filtrations}.
+filtration}.
 
 Given any Chern classes, can we guarantee the existence of a sheaf with these
 Chern classes? No.
@@ -319,7 +328,7 @@ $$
 where $r=\text{rk}(\mathcal{F})$ and $\dim X=n$.
 \end{theorem}
 
-\section*{Boundedness}
+\section{Boundedness}
 \label{section-boundedness}
 
 We need further preparation before we can define moduli spaces.
@@ -327,9 +336,9 @@ We need further preparation before we can define moduli spaces.
 \begin{definition}
 \label{definition-bounded-family}
 A family of isomorphism classes of coherent sheaves on $X$ is called {\it
-bounded} if there exists $S$ of \underline{finite type} and an $O_{S \times X}$
-sheaf $F$ such that the family is contained in $\{ \mathcal{F}_{S \times X}|s
-\text{ closed in }S\}$
+bounded} if there exists $S$ of {\bf finite type} and an 
+$\mathcal{O}_{S \times X}$ sheaf $F$ such that the family is contained in
+ $\{ \mathcal{F}_{S \times X}|s  \text{ closed in }S\}$.
 \end{definition}
 
 \begin{definition}
@@ -401,7 +410,7 @@ $E$ is stable if and only if for all $E \to F$ surjective we have that
 $\mu(E)<\mu(F)$.
 \end{proof}
 
-\section*{Construction of the moduli space of semi-stable sheaves}
+\section{Construction of the moduli space of semi-stable sheaves}
 \label{section-construction-of-the-moduli-space-of-semi-stable-sheaves}
 $$
 \mathcal{M}^p(s)=\left\{ \substack{\text{$\mathcal{F}$ on $X\times S$,
@@ -416,6 +425,7 @@ $\mathcal{F}$ is a semi-stable sheaf is  $\exists $ $m$ such that
 $\mathcal{F}$ is $m$-regular, which implies that $\mathcal{F}(m)$ is globally
 generated.
 
+\medskip\noindent 
 {\bf Warning.} Following are several formulas I don't understand and just copied
 from the board as they were.
  $$
@@ -454,9 +464,11 @@ Hilbert polynomial $P$, $\mathcal{M}_{X,P}$ is projective and
 $\mathcal{M}_{X,P}^s$ of stable sheaves with Hilbert polynomial $P$.
 \end{theorem}
 
+\medskip\noindent
 {\bf Fact.} The GIT (semi-)stability coincides with the Gieseker
-(semi-)stability. Reference: Huybrechts-Lehu, Moduli of Sheaves.
+(semi-)stability (see \cite{HL}).
 
+\medskip\noindent
 {\bf Remarks on working with stacks.}
 
 \begin{itemize}
@@ -469,13 +481,14 @@ $G \mathbb{y} X \rightsquigarrow [X/G]$.
 of $\mathcal{M}:(\text{Sch}) \to (\text{Sets})$, we substitute $(\text{Sets})$
 with a 2-category.
 \item Disadvantage: not all algebraic stacks have coarse moduli spaces but if
-the number of automorphisms of points (is finite?)
+the number of automorphisms of points [is finite?].
 \item Disadvantage: may not be projective (even if proper/compact).
 \end{itemize}
 
 In sum, we may not be able to produce a moduli space, and even if we can, it may
 not be projective.
 
+\medskip\noindent
 Even in the easiest situation we can have, we don't have universal family:
 
 \begin{example}[The line bundles of degree $d$ on $\mathbb{P}^1$ do not have
@@ -494,7 +507,7 @@ and $\mathcal{O}(d) \neq \mathcal{O}_{\mathbb{P}^1}$, $d\neq 0$.
 \end{example}
 
 
-\section*{Remarks on stacks}
+\section{Remarks on stacks}
 \label{section-remarks-on-stacks}
 
 The following was not defined properly. As a stack,
@@ -504,15 +517,15 @@ $$
 parametrized by $\mathbb{G}_m$-bundles.
 $$
 \xymatrix{
-\mathcal{L}\setminus\{\text{zero section}\}\ar[r]\ar[d]&\Gamma^A?\ar[d]\\
+\mathcal{L}\setminus\{\text{zero section}\}\ar[r]\ar[d]&\Gamma^A[?]\ar[d]\\
 \mathbb{P}^1\ar[r]_\varphi&B\mathbb{G}_m
 }
 $$
-
+\medskip\noindent
 {\bf Tangent space.} The tangent space of $\mathcal{M}_{X,P}$, in $\ni E$, is
 $\text{Ext}^1(E,E)$ if $\text{Ext}^2(E,E)=0 \implies  \mathcal{M}_{X,P}$ is
-smooth. ($\text{Ext}$ groups are defined in Algebra, Section
-\ref{algebra-section-ext}, also appears to be a theorem in deformation theory.)
+smooth. ($\text{Ext}$ groups are defined in Stacks Project, Algebra; this result
+ also appears to be a theorem in deformation theory.)
 
 \begin{example}
 \label{example-moduli-space-of-curves-is-smooth}
@@ -527,6 +540,7 @@ The dimension of the stack is $\dim T_{\mathcal{M},E}-\dim \text{Aut}(E)$, which
 is just $\dim (\text{Ext}^1(E,E) - \dim \text{Ext}^0(E,E)$, which in turn says
 that $\mathcal{X}(X,E \otimes E^\vee)=V^2(f-g)$.
 
+\medskip\noindent
 {\bf Question 2.} Once we have a moduli space we want so study its geometry. 
 What can we say about $\mathcal{M}_{X,P,H}$?
 
@@ -549,8 +563,10 @@ Fix $H,H'$ ample. For $\Delta \gg 0$, $\mathcal{M}_{X,H}(r,L,n)$ and
 $\mathcal{M}_{X,H}(r,L,n)$ are birrational.
 \end{theorem}
 
-An idea: there are ample cones, and walls between them, and when you cross the
-wall, you get to a birrational thing.
+\medskip\noindent
+Intuitive idea of what follows: there are ample cones, and walls between them, 
+and when we cross the
+wall, we get to an object birational to the one we were previously at.
 
 \begin{definition}
 \label{definition-wall}
@@ -645,7 +661,7 @@ $\lim_{d \to \infty} m(d)=\infty$.
 
 \begin{example}
 \label{example-}
-In DT (Donaldson-Thomas?) theory, $X$ 3-fold,
+In DT (Donaldson-Thomas) theory, $X$ 3-fold,
 $$
 I(X,P)=\left\{Z \subset X: \substack{Z \text{ a curve with} \\ 
 \text{fixed Hilbert polynomial}}\right\}
@@ -654,7 +670,7 @@ $P(u)=3u+1$ twisted cubics have  $P(u)=3u+1$. But genus 1 curves with a
 point also have  $P(u)=3u+1$. $I(\mathbb{P}^3,3n+1)$ has several components.
 \end{example}
 
-
-
+\bibliography{my}
+\bibliographystyle{amsalpha}
 
 \end{document}

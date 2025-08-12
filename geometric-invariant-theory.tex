@@ -4,8 +4,12 @@
 \title{Geometric Invariant Theory}
 \maketitle
 
-Minicourse by Michel Brion, CIMPA school Florianópolis 2025.
+\noindent
+Minicourse by Michel Brion 
+(Université Grenoble Alpes, Institut Fourier, France), 
+CIMPA school Florianópolis 2025.
 
+\medskip\noindent
 Notes at 
 \href{http:/\!/github.com/danimalabares/cimpa-floripa}
 {github.com/danimalabares/cimpa-floripa}
@@ -37,17 +41,34 @@ quotients.
 \section{Introduction}
 \label{section-introduction}
 
+Let $G$ be a finite group of order $N$, $G \subset \text{Aut}(X)$,  where $X$ is
+an affine variety over a field  $k=\overline{k}$ of arbitrary characteristic 
+$p \geq 0$. $G$ acts on $\Gamma(X,\mathcal{O}_X)=\mathcal{O}(X)$ by
+$$
+(gf)(x)=f(g^{-1}x).
+$$
+Define
+$$
+\mathcal{O}(X)^G:=\{f|gf=f\;\forall g \in G\}\subset\mathcal{O}(X)
+$$
+
 \begin{proposition}
-\label{proposition-1}
+\label{proposition-OXG-is-finitely-generated}
 $\mathcal{O}(X)^G$ is finitely generated and $\mathcal{O}(X)$ is a finite module
-over $\mathcal{O}(X)^G$
+over $\mathcal{O}(X)^G$.
 \end{proposition}
+
+\begin{proof}
+$A=\mathcal{O}(X) \supset \mathcal{O}(X)^G=B$, 
+$\mathcal{O}(X)=k[f_1,\ldots,f_n]$,
+$p_1(f)=\prod_{g \in G}(t-gf) \in A^G[t]=B[t]$.
+\end{proof}
 
 Let $Y = \text{Spec}B$ and $\pi:X\to Y$ a dominant, finite morphism, which
 implies it is surjective.
 
 \begin{proposition}
-\label{proposition-2}
+\label{proposition-fibers-of-pi-are-orbits}
 The set-theoretic fibers of $\pi$ are the orbits $Gx$
 \end{proposition}
 

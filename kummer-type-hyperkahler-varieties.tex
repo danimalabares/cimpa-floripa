@@ -267,4 +267,330 @@ $$
 $$
 \end{proof}
 
+\section{Semiorthogonal decomposition and Calabi-Yau categories}
+\label{section-SOD-and-CY-categories}
+
+\begin{situation}
+\label{situation-SOD-and-SC}
+$$
+\xymatrix{
+D^b(Y),\substack{Y\text{ a cubic} \\
+\text{4-fold}}\ar[dr]_{\substack{\text{semiorthogonal} \\
+\text{decomposition}}}
+&  &\substack{\text{moduli}\\ \text{on K3} \\ \text{as HK}}\\
+&\text{Ku}_Y\substack{\text{K3} \\ \text{category}}
+\ar[ur]_{\text{stability conditions}}
+}
+$$
+\end{situation}
+
+\begin{definition}
+\label{definition-SOD}
+Let $X$ be a projective smooth variety over $\mathbb{C}$. 
+A {\it SOD} $D^b(X)=\left<A_1,\ldots,A_n\right>$ is a sequence $A_i$ full
+triangulated subcategory such that
+\begin{enumerate}
+\item $\Hom(F,G)=0$ for all $F \in A_i$, $G \in A_j$.
+\item $\forall F \in D^b(X)$ $\exists 0=F_n\to F_{n-1}\to\ldots\to F_0=F$ 
+such that
+$\text{Cone}(F_i \to F_{i-1})\in A_i$.
+\end{enumerate}
+\end{definition}
+
+\begin{exercise}
+\label{exercise-}
+\begin{enumerate}
+\item $D^b(\text{Spec}\mathbb{C})\ni V \simeq \bigoplus_{i}H^{i}(V)[-i]$.
+\item For $E \in D^b(X)$ define
+\begin{align*}
+\phi_E: D^b(\text{Spec}\mathbb{C}) &\longrightarrow D^b(X) \\
+V &\longmapsto V\otimes E=\bigoplus_{i}H^i(V)\otimes E[-i]
+\end{align*}
+Then $\phi_E$ fully faithful $\iff$ $E$ is exceptional
+$$
+\left(\text{Ext}^p(E,E)=
+\begin{cases}
+\mathbb{C}\qquad &p=0 \\
+0\qquad &p\neq 0
+\end{cases}\right)
+$$
+\begin{definition}
+\label{definition-}
+$\left<E\right>:=\phi_E(D^b(\text{Spec}\mathbb{C}))\subset D^b(X)$ for
+exceptional $E$.
+
+\end{definition}
+\item {\bf Example.} $\mathcal{O}(i)$ exceptional on $\mathbb{P}^n$.
+(Beilinson.) $D^b(\mathbb{P}^n)
+=\left<\mathcal{O},\mathcal{O}(1),\ldots,\mathcal{O}(n)\right>$
+\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+\label{definition-right-admissible}
+A triangulated category $A \subset D^b(X)$ is {\it right admissible} if
+$\alpha:A\to D^b(X)$ admits a right adjoint. $\alpha^!:D^b(X)\to A$. (I.e.,
+$\Hom_{D^b(X)}(\alpha(E),F)\simeq \Hom_A(E,\alpha^!(F))$
+\end{definition}
+
+\begin{exercise}
+\label{exercise-right-admissible}
+Let $E$ be exceptional. $\left<E\right>\subset D^b(X)$ is right admissible.
+$$
+\alpha^!=R \Hom(E,F) \in D^b(\text{Spec} \mathbb{C})
+$$
+\end{exercise}
+
+Let
+$$
+A^\perp:=\{F \in D^b(X):\Hom(E,F)=0, \forall E \in ?\}
+$$
+\begin{lemma}
+\label{lemma-right-admissible}
+$A \subset D^b(X)$ is right admissible $\implies$
+$D^b(X)=\left<A^\perp,A\right>$.
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}
+\item Is clear.
+\item $0=F_2 \to F_1 \to F_0=F$, $F_1 \in A$, $\text{Cone}(F_1 \to F) \in
+A^\perp$. We use adjunction as follows:
+$$
+\text{id} \in \Hom(\alpha^!(F),\alpha^!(F))=\Hom(\alpha \alpha^!F,F)
+$$
+We have the following exact triangle:
+$$
+\xymatrix{
+\alpha \alpha^!F\ar[r]^{\text{counit}}&  F\ar[r]& B
+}
+$$
+{\bf Claim.} $B \in A^\perp$. Let $E \in A$ 
+$$
+\xymatrixcolsep{1em}
+\xymatrix{
+\cdots\ar[r]&\Hom(\alpha(E),\alpha \alpha^!(F))\ar[dr]^{\cong}\ar[rr]&&
+\Hom(\alpha(E),F)\ar[dl]_{\cong}\ar[r]&\Hom(\alpha(E),B)\\
+& & \Hom(E,\alpha^!(F))
+}
+$$
+which implies that $\Hom(\alpha(E),B)=0$.
+
+\end{enumerate}
+\end{proof}
+
+\begin{definition}
+\label{definition-left-mutation}
+{\it Left mutation} $\mathbb{L}_A$ is defined as
+$$
+\alpha \alpha^!F \to F \to \mathbb{L}_AF.
+$$
+\end{definition}
+
+\begin{exercise}
+\label{exercise-left-mutation}
+$A=\left<E\right>$.
+$$
+R \Hom(E,F)\otimes E \xrightarrow{\text{ev}}F \to \mathbb{L}_{\left<E\right>}F
+$$
+\end{exercise}
+
+{\bf Corollary.} $E_1,\ldots,E_n \in D^b(X)$ exceptional objects with
+$\text{Ext}^\bullet(E_i,E_j)=0$ for $i>j$ (we say this is an  {\it exceptional
+collection}). Then
+$$
+D^b(X)=\left<R_x,E_1,\ldots,E_n\right>,\qquad 
+R_X=\left<E_1,\ldots,E_n\right>^\perp
+$$
+
+\begin{example}
+\label{example-Fano}
+$X$ Fano, $-K_X=rH$, $H$ ample, $r>0$,
+ $\mathcal{O}_X,\mathcal{O}_X(H),\ldots,\mathcal{O}_X((r-1)H)$
+an exceptional collection.
+
+($\text{Ext}^\bullet(\mathcal{O}(iH),\mathcal{O}(jH))=
+H^{\bullet}(X,\mathcal{O}(j-i)H)=0$) if $-r<j-i<0$. $\implies$
+$$
+D^b(X)=\left<R_X,\mathcal{O}_X\ldots\mathcal{O}_X(r-i)H\right>
+$$
+\end{example}
+
+\begin{definition}
+\label{definition-Serre-functor}
+A {\it Serre functor} for a $\Delta$-category $\mathcal{D}$ is an autoeq
+$S_{\mathcal{D}}$ such that
+$$
+\Hom_{\mathcal{D}}(E,F)^\vee \cong \Hom(F,S_{\mathcal{D}}(E)).
+$$
+functorially in $E,F \in \mathcal{D}$.
+\end{definition}
+
+\begin{remark}
+\label{remark-uniqueness-of-Serre-functor}
+It is unique if it exists.
+\end{remark}
+
+The following example explains why this is called the Serre functor --- it is a
+generalization of Serre duality.
+
+\begin{example}
+\label{example-Serre-functor-is-Serre-duality}
+$X$ smooth projective variety of dimension $n$. Consider
+$$
+S_{D^b(X)}=(-\otimes \omega_X)[n]
+$$
+eg. $E$ locally free on $X$.
+\begin{align*}
+H^{i}(X,E)&=\Hom_{D^b(X)}(\mathcal{O}_X,E[i])\\
+& =\Hom_{D^b(X)}(E[i],\omega_X(n])^* \\
+&=\Hom(\mathcal{O},E^\vee \otimes \omega_X[n-i])\\
+&=H^{n-i}(E^{\vee}\otimes \omega_X)^*
+\end{align*}
+\end{example}
+
+\begin{definition}
+\label{definition-Calabi-Yau-category}
+$\mathcal{D}$ is
+\begin{itemize}
+\item {\it Calabi-Yau category} of dimension $n$ if $S_{\mathcal{D}}\cong[n]$.
+(I.e. the Serre functor is just shifting by $n$.)
+\item {\it Fractional Calabi-Yau category} of dimension $p/q$ if
+$S^q_{\mathcal{D}}\cong[p]$ (where the exponent $q$ just means composing the
+functor $S_{\mathcal{D}}$ $q \in \mathbb{Z}$ times).
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Kuznetsov]
+\label{theorem-Kuznetsov}
+$X \subset \mathbb{P}^n$ smooth Fano hypersurface of degree $d \leq n$.
+$$
+D^b(X)=\left<\text{Ku}_X,\mathcal{O}_X,\ldots,\mathcal{O}_X(n-d)\right>
+$$
+Then $\text{Ku}_X$ has a Serre functor $S$ with
+$S^{d/c}\cong\left[\frac{(n+1)(d-2)}{c}\right]$ where 
+ $c=\text{gcd}(d,n+1)$.
+\end{theorem}
+
+\begin{example}
+\label{example-cubic-3-and-4-folds}
+$d=3$, a cubic 3-fold,  $n=4$,  $S^3=[5]$, cubic 4-fold $n=5$,  $S=[2]$.
+\end{example}
+
+\begin{theorem}[Kuznetsov]
+\label{theorem-Kuznetsov-2}
+$X$ cubic 4-fold,
+\begin{enumerate}
+\item $\exists $ special $X$ such that $\text{Ku}_X \simeq D^b(S)$, where $S$ is
+a K3 surface.
+\item $X$ very general $\implies$ $\text{Ku}_X \not \simeq D^b(\text{var})$.
+\end{enumerate}
+\end{theorem}
+
+We shall not prove this theorems. However, by the fourth lecture we may give the
+idea of their proofs.
+
+\medskip\noindent
+{\bf Conjecture (Kuznetsov).} Cubic 4-fold $X$ is rational if and only if
+$\text{Ku}_X \simeq D^b(\text{K3 surface})$.
+
+\medskip\noindent
+[KKPY] very general $X$ is not rational.
+
+\medskip\noindent
+Let's go back and show how to prove the statement in Example
+\ref{example-cubic-3-and-4-folds} about
+the cubic 4-fold.
+
+\begin{lemma}
+\label{lemma-cubic-4-fold}
+Assume that $\mathcal{D}=\left<A^{\perp},A\right>$, $S_{\mathcal{D}}\exists $.
+Then 
+$S^{-1}_{A^\perp}=\mathbb{L}_A\circ S^{-1}_{\mathcal{D}}|_{A^\perp}$.
+\end{lemma}
+
+\begin{proof}
+$F,G \in A^\perp$,
+\begin{align*}
+\Hom_{A^\perp}(F,G)
+&\cong\Hom_{\mathcal{D}}(G,S_{\mathcal{D}}(F))^\vee\\
+&\cong\Hom_{\mathcal{D}}(S^{-1}_{\mathcal{D}}(G),F)^\vee\\
+&\cong \Hom_{\mathcal{D}}(\mathbb{L}_A(\underbrace{S^{-1}_{\mathcal{D}}(G))}
+_{\in A^\perp},F)^\vee
+\end{align*}
+\end{proof}
+
+Now: cubic 4-fold $X \subset \mathbb{P}^5$,
+$$
+D^b(X)=\left<\text{Ku}_X,\mathcal{O},\mathcal{O}(1),\mathcal{O}(2)\right>
+$$
+The lemma tells us that
+$$
+S_{\text{Ku}_X}^{-1}
+=\mathbb{L}_{\left<\mathcal{O},\mathcal{O}(1),\mathcal{O}(2)\right>}
+\circ (- \otimes \mathcal{O}(3)[-4])
+$$
+
+\medskip\noindent
+{\bf Key observation 1.} 
+$X\overset{i}{\hookrightarrow}\mathbb{P}^5$, for $F \in D^b(X)$
+there exists an exact $\Delta$:
+$$
+i^*i_*F \to F \to F \otimes \mathcal{O}_X(-3)[2]
+$$
+Assume $F \in \text{Ku}_X$, apply $S^{-1}_{\text{Ku}}$.
+
+$$
+\mathbb{L}_{\left<\mathcal{O},\mathcal{O}(1),\mathcal{O}(2)\right>}
+\circ (i^* i_* F \otimes \mathcal{O}(3)[-4]) \to S_{\text{Ku}}^{-1}(F)
+\to \underbrace{\mathbb{L}_{\left<\ldots\right>}\circ(F[-2])}
+_{\cong F[-2]\text{, as }F\in \text{Ku}_X}
+$$
+
+\medskip\noindent
+{\bf Key observation 2.} $i^*i_*F \otimes \mathcal{O}(3) \in 
+\left<\mathcal{O},\mathcal{O}(1),\mathcal{O}(2)\right>$, so the first term
+vanishes. (It's enough to show that $i_*F \otimes \mathcal{O}(3) \in
+\left<\mathcal{O}_{\mathbb{P}^5},\mathcal{O}_{\mathbb{P}^5}(1),
+\mathcal{O}_{\mathbb{P}^5}(2)\right> 
+\iff i_*F \in 
+\underbrace{\left<\mathcal{O}(-3),\mathcal{O}(-2),\mathcal{O}(-1)\right>}
+_{=\left<\mathcal{O},\mathcal{O}(1),\mathcal{O}(2)\right>^\perp} \subset 
+D^b(\mathbb{P}^5)$.)
+
+\begin{align*}
+R\Hom\left(
+\begin{matrix}
+\mathcal{O}\\ \mathcal{O}(1)\\ \mathcal{O}(2)
+\end{matrix},i_*F
+\right)&=0
+\\
+R\Hom\left(
+i^*\begin{matrix}
+\mathcal{O}\\ \mathcal{O}(1)\\ \mathcal{O}(2)
+\end{matrix},F
+\right)&=0\qquad \text{since $F \in \text{Ku}_X$}
+\end{align*}
+and the left-hand-sides on the last two equations are $\cong$.
+
+\begin{proof}[Proof of Key observation 1 assuming $F$ is a sheaf.]
+Take $i^*i_*F \to F \to G$ and consider its pushforward
+$$
+i_*i^*i_*F \to i_* F \to i_*G
+$$
+Note that
+\begin{align*}
+i_*i^*i_*F \simeq i_*F\overset{L}{\otimes}_{\mathcal{O}_{\mathbb{P}^5}}
+&\cong \left[ 
+\underbrace{i_* F \otimes\mathcal{O}
+_{\mathbb{P}^5}(-x)}_{\text{deg}-1} \xrightarrow{\vee}
+i_*F\otimes \mathcal{O}_{\mathbb{P}^5}\right] \\
+&  \simeq i_*F \oplus i_*F\otimes \mathcal{O}_{\mathbb{P}^5}(-x)[1]\\
+&\xrightarrow{\substack{ \text{proj. to}\\\text{$1^{\text{st}}$ factor}}}i_*F\\
+&  \implies i_*G \simeq i_* F \otimes \mathbb{P}_{\mathbb{P}^5(-x)[2]}\\
+& \implies G \simeq F \otimes \mathcal{O}_X(-x)[2]\qquad i_*\text{ f.f.}
+\end{align*}
+
+\end{proof}
+
 \end{document}

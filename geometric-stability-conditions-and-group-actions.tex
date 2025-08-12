@@ -200,15 +200,41 @@ stability conditions?
 \medskip\noindent
 The following theorem is valid in any dimension:
 
-\begin{theorem}
+\begin{theorem}[Lie Fu-Chunyi Li-Xiaolei Zhao '21]
 \label{theorem-Albanese-variety}
 $X$ has a finite Albanese morphism ($\iff$ there exist a finite morphism to an
 abelian variety), then
 $$
 \text{Stab}(X) = \text{Stab}^{\text{geo}}(X)
 $$
-[Lie Fu-Chunyi Li-Xiaolei Zhao '21]
 \end{theorem}
+
+\begin{proof}[Sketch of proof]
+\begin{itemize}
+\item $\sigma \in \text{Stab}(X)$.
+\item Let $E_1,\ldots,E_k$ be the {\it Jordan-Hölder factors} of $\mathcal{O}_X$
+w.r.t. $\sigma$ (i.e. $E_i$ $\sigma$-stable connected component containing the
+identity).
+\item $\mathcal{L} \in \text{Pic}^0(X)$.
+\end{itemize}
+By [Polishchuk '07], $\otimes \mathcal{L}$ does not change stability. Also
+$\mathcal{O}_x \otimes \mathcal{L}\cong \mathcal{O}_x$ so HN filtration and
+Jordan-Hölder factors are preserved $\implies $ $E_i \otimes \mathcal{L} \cong
+E_i$.
+\begin{itemize}
+\item $\mathcal{L} \in \text{Pic}^0(\text{Alb}(X))$, $E_i \otimes
+\text{alb}^\vee(\mathcal{L})\cong E_i$.
+\end{itemize}
+\begin{align*}
+\implies & R\text{alb}_*(E_i)\otimes \mathcal{L} \cong R\text{alb}_*(E_i)\qquad 
+\text{(projection formula)}\\
+\implies &  R\text{alb}_*(E_i)\text{ has finite support}\qquad 
+\text{([Polishucuk '03])}\\
+\implies &E_i\text{ has finite support}\qquad 
+\text{($\text{alb}_*$ finite)}\\
+\overset{\text{claim}}{\implies }&\mathcal{O}_x\text{ is $\sigma$-stable}
+\end{align*}
+\end{proof}
 
 \medskip\noindent
 {\bf Question 4.} Albanese morphism of $X$ is not finite implies that there
@@ -218,5 +244,173 @@ exist nongeometric stability conditions?
 The idea is to investigate this for examples arising as free quotients. If 
 $G \mathbb{y} X$ is a free action of a finite group, then $\text{alb}_X$ is
 finite, and for $Y:=X/G$ we have $\text{alb}_Y$ is not finite. In sections 2 and
-3 we will compate $\text{Stab}(X)$ and $\text{Stab}(X/G)$. 
+3 we will compate $\text{Stab}(X)$ and $\text{Stab}(X/G)$.
+
+\section{Equivariant categories}
+\label{section-equivariant-categories}
+
+Let $G$ be a finite group and $\mathcal{D}$ a $k$-linear category (i.e. all
+$\Hom$ are $k$-vector spaces, in particular it is additive), where $k=\bar{k}$
+and $(|G|,\text{char}k)=1$.
+
+The following definition is by [Deligne '97].
+
+\begin{definition}[Group action]
+\label{definition-group-action}
+A {\it (right) action} of $G$ on $\mathcal{D}$ is the data of
+\begin{enumerate}
+\item $\forall g \in G$, $\phi_g:\mathcal{D}\xrightarrow{\sim}\mathcal{D}$.
+\item $\forall g,h\in G$, a natural isomorphism 
+$\mathcal{E}_{g,h}:\phi_g\circ \phi_h \xrightarrow{\sim}\phi_{hg}$ such that
+$$
+\xymatrix{
+\phi_f \circ\phi_g \circ\phi_h
+\ar[r]^{\mathcal{E}_{g,h}}\ar[d]_{\mathcal{E}_{f,g}}&\phi_f \circ \phi_{hg}
+\ar[d]^{\mathcal{E}_{f \circ hg}}\\
+\phi_{gf}\circ \phi_h\ar[r]^{\mathcal{E}_{gf,h}}&\phi_{hgf}
+}
+$$
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+\label{remark-more-than-a-homomorphism}
+This is more than a group a homomorphism $G \to \text{Aut}(\mathcal{D})$. 
+Indeed, given this, $\forall E \in \mathcal{D}$, 
+$$
+\phi_g \circ \phi_h(E)\cong \phi_{gh}(E)
+$$
+but may not come from a natural isomorphism of functors
+$\phi_g\circ\phi_h\cong\phi_{hg}$.
+\end{remark}
+
+\begin{example}
+\label{example-group-actions}
+\begin{enumerate}
+\item $X$: scheme, $G \leq \text{Aut}(X)$. For every $g \in G$ define
+$\phi_g:=g^* :\text{Coh}(X)\xrightarrow{\sim}\text{Coh}(X)$. Then for every
+$g,h$ there are canonical isomorphisms
+$$
+\phi_g \circ\phi_h=g^*\circ h^*\xrightarrow{\sim}(hg)^* =\phi_{hg}.
+$$
+$G \mathbb{y} \text{Coh}(X)$ lifts to $G\mathbb{y}D^b(X)$.
+
+Eg. an Enriques surface, i.e. $Y=X/\mathbb{Z}/2\mathbb{Z}$, $X$ a K3
+surface, $\mathbb{Z}/2\mathbb{Z}=\left<i\right>$, for $i:X\to X$ involution, $x
+\in X$, $i^* (\mathcal{O}_x)=\mathcal{O}_{i^{-1}(x)}$.
+
+\item $Q$: acyclic quiver, $G\leq \text{Aut}^+(Q)=$ automorphisms of the
+graph, orientation preserving. Then $G\mathbb{y}\text{Rep}Q$. Via
+$(M_i,\varphi_\alpha)\mapsto (M_{g(i)},\varphi_{g(x)})$.
+
+Eg. [Missing]
+\end{enumerate}
+\end{example}
+
+\medskip\noindent
+{\bf Equivariantization.}
+
+\begin{definition}
+\label{definition-G-equivariant-object}
+Let $G \mathbb{y}\mathcal{D}$. A {\it $G$-equivariant} object is a pair
+$(E,\{\lambda_g\}_G$,
+\begin{itemize}
+\item $E \in \mathcal{D}$,
+\item $\lambda_g:E \xrightarrow{\sim}\phi_g(E)$, a {\bf choice} of isomorphism
+for all $g\in G$, such that
+$$
+\xymatrix{
+E\ar[r]^{\lambda_g}\ar[d]_{\lambda_hg,\sim}&\phi_g(E)\\
+\phi_{hg}(E)&\phi_g(\phi_n(E))\ar[l]_{\mathcal{E}_{gh}}
+}
+$$
+A {\it morphism of $G$-equivariant objects} is 
+$$
+(E,\{\lambda_g\}_G)\to(E'_g,\{\lambda'_g\}_G)
+$$
+is $F \in \Hom_\mathcal{D}(E,E')$ such that for all $g \in G$,
+$$
+\xymatrix{
+E\ar[d]_F\ar[r]^{\lambda_g}&\phi_g(E)\ar[d]^{\phi_g(F)}\\
+E'\ar[r]^{\lambda'_g}&\phi_g(E')
+}
+$$
+Together these form a category, $\mathcal{D}_G$, called {\it $G$-equivariant
+category}.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+\label{remark-uses-isomorphisms-Egh}
+This uses the isomorphisms $\mathcal{E}_{g,h}$.
+\end{remark}
+
+\begin{example}
+\label{example-G-equivariant-objects}
+\begin{enumerate}
+\item $G\mathbb{y}X$, $G$-equivariant objects are $G$-equivariant coherent
+sheaves.
+$$
+(\text{Coh}(X))_G=:\text{Coh}_G(X)
+$$
+In fact, $\text{Coh}_G(X)\cong \text{Coh}([X/G])$.
+
+If $G$ acts freely, then
+$$
+\xymatrix{
+X\ar[dr]_\pi\ar[rr]^g &  &  X\ar[dl]_\pi\\
+X/G
+}
+$$
+and $\text{Coh}(X/G)\cong \text{Coh}_G(X)$ via $E \mapsto (\pi^*
+E,\{\lambda_g\}_{g \in G}$ where
+$$
+\xymatrix{
+\lambda_g:\pi^* E\ar[dr]_{\lambda_g}\ar[r]& (\pi \circ g)^* E\ar[d]^=\\
+&g^*(\pi^*E)
+}
+$$
+Eg. $Y=X/(\mathbb{Z}/2\mathbb{Z})$ Enriques surface, $y \in Y$,
+$\text{supp}\pi^{-1}(y)=\{x,x'=i^{-1}(x)\}$ 
+$$
+\xymatrixrowsep{.2em}
+\xymatrix{
+&\mathcal{O}_x\ar[r]^{\text{id}}&\mathcal{O}_x\\
+\pi^* (\mathcal{O}_x)=&\oplus&\oplus&=\text{id}^*(\pi^*(\mathcal{O}_y))\\
+&\mathcal{O}_{x'}\ar[r]^{\text{id}}&\mathcal{O}_{x'}
+}
+$$
+$$
+\xymatrixrowsep{.2em}
+\xymatrix{
+&\mathcal{O}_x\ar[r]^{i^*}\ar[ddr]&\mathcal{O}_x\\
+\pi^* (\mathcal{O}_y)=&\oplus&\oplus&=i^*(\pi^*(\mathcal{O}_y))\\
+&\mathcal{O}_{x'}\ar[r]^{i^*}\ar[uur]&\mathcal{O}_{x'}
+}
+$$
+In general,
+$$
+(D^b(X))_G\cong D^b(\text{Coh}_G(X))=:D^b_G(X)
+$$
+\item {\bf Theorem (Demonet '10).} $G\mathbb{y} Q$ then $\exists Q_G$ such that
+$\text{Rep}(Q_G)\cong\text{Rep}(Q)_G$. Eg. [Missing.]
+
+\item $G \mathbb{y} \mathcal{D}$ for $G$ abelian,
+$\hat{G}:=\Hom(G,K^*)\mathbb{y}\mathcal{D}_G$ by 
+$$
+\phi_{\underbrace{x}_{\in G}}((E,\{\lambda_g\}_G))
+:=(E,\{\lambda_g\}_G)\otimes x=(E,\{\lambda_g\cdot x(g)\}_{g \in G})
+$$
+Eg. $Y$ Enriques surface … [Missing]
+\end{enumerate}
+\end{example}
+ 
+\begin{theorem}[Elagin '15]
+\label{theorem-Elagin}
+$G$ abelian, $G\mathbb{y}\mathcal{D}$
+$$
+(\mathcal{D}_G)_{\hat{G}}\cong \mathcal{D}
+$$
+\end{theorem}
+
 \end{document}

@@ -593,4 +593,192 @@ i_*F\otimes \mathcal{O}_{\mathbb{P}^5}\right] \\
 
 \end{proof}
 
+\section{Inducing $t$-structure and stability conditions}
+\label{section-inducing-t-structure-and-stability-conditions}
+
+\begin{example}
+\label{example-cubic-3-fold}
+$X$ cubic 3-fold, $D^b(X)=\left<\text{Ku}_X,\mathcal{O},\mathcal{O}(1)\right>$.
+\end{example}
+
+\noindent
+{\bf Goal.} Use $t$-structure/(weak) stability conditions on $D^b(X)$ to induce
+a $t$-structure/stability conditions on $Ku_X$.
+
+\medskip\noindent
+\begin{proposition}[Key proposition]
+\label{proposition-key}
+Let $\mathcal{D}=\left<R,E_1,\ldots,E_n\right>$ be a semiorthogonal
+decomposition. Assume that $\mathcal{A} \subset \mathcal{D}$ is the heart of a
+bonded $t$-structure such that
+\begin{enumerate}
+\item $\forall i,$ $E_i \in \mathcal{A}$.
+\item $\forall i$, $S_{\mathcal{D}}(E_i) \in \mathcal{A}[i]$.
+\end{enumerate}
+Then $\mathcal{A}:=\mathcal{A}\cap R$ is the heart of a bounded $t$-structure on
+$R$. (Concretely, this means for $F \in R$, view it as an object in
+$\mathcal{D}$ and take cohomology with respect to the $t$-structure, we need
+$H_{\mathcal{A}}^q(F) \in R$ $\forall q$.)
+\end{proposition}
+
+[BLMS] using spectral sequence.
+
+\begin{example}
+\label{example-cubic-3-fold-continued}
+For $X$ cubic 3-fold and
+$D^b(X)=\left<\text{Ku}_X,\mathcal{O},\mathcal{O}(1)\right>$,
+\begin{align*}
+\left(\textit{Coh}^{-\frac{1}{2}}(X),Z_{\alpha,-\frac{1}{2}}
+=\frac{1}{2}\alpha^2H^2 ch_0 -ch_2^{-\frac{1}{2}}+iHch_1^{-\frac{1}{2}}\right)
+\end{align*}
+\end{example}
+
+\begin{exercise}
+\label{exercise-}
+\begin{itemize}
+\item For all $\alpha>0$, $\mathcal{O}$, $\mathcal{O}(1)$, $\mathcal{O}(-2)[1]$, 
+$\mathcal{O}(-1)[1]\in \textit{Coh}^{-\frac{1}{2}}$.
+\item For all $\alpha \sim 0$,
+\begin{align*}
+\mu_{\alpha,-\frac{1}{2}}(\mathcal{O}(-2)[1])
+&<\mu_{\alpha,-\frac{1}{2}}(\mathcal{O}(-1)[1])<0\\
+&<\mu_{\alpha,-\frac{1}{2}}(\mathcal{O})
+<\mu_{\alpha,-\frac{1}{2}}(\mathcal{O}(1)).
+\end{align*}
+So tilt $\textit{Coh}^{-\frac{1}{2}}(X)$ one more time w.r.t.
+$\mu_{\alpha,-\frac{1}{2}}=0$. We can apply Key Proposition 
+\ref{proposition-key}.
+\end{itemize}
+\end{exercise}
+
+\begin{example}
+\label{example-cubic-4-fold}
+How about cubic 4-fold $Y$? Idea: embed 
+$Ku_X\hookrightarrow \underbrace{D^b(\mathbb{P}^3,\mathcal{D}_0)}
+_{\text{conic fibration}}$.
+\end{example}
+
+\begin{theorem}
+\label{theorem-exists-SC-for-cubic-4-fold}
+There exist stability conditions on $Ku_Y$  for a cubic 4-fold $Y$.
+\end{theorem}
+
+\medskip\noindent
+Now we shall give the idea of why Key Proposition \ref{proposition-key} holds.
+
+General question modeling Key Proposition \ref{proposition-key}: 
+$F: \mathcal{C} \to \mathcal{D}$ exact functor between triangulated categories.
+Say $\mathcal{D}^{heart}$ is the heart of a $t$-structure on $\mathcal{D}$. 
+Under what condition is
+$$
+\mathcal{C}^{heart}=\{E \in \mathcal{C}|F(E) \in \mathcal{D}^{heart}\}
+$$
+the heart of a $t$-structure on $\mathcal{C}$?
+
+\begin{example}
+\label{example-}
+Let $X,Y$ be smooth projective and $f:X \to Y$ a finite a morphism.
+$$
+\xymatrix{
+D^b(X)\ar[r]_{f_*} \ar@{^{(}->}[d]
+&D^b(Y) \ar@/_{1.5pc}/[l]_{f^*}\ar@{^{(}->}[d]\\
+D(Q\textit{Coh}(X))=D_{qc}(X)\ar[r]_{f_*}
+&\underbrace{D_{qc}(Y)}_{\substack{\text{admits small} \\ \text{direct sum}}}
+\ar@/_{1.5pc}/[l]_{f^*}
+}
+$$
+\end{example}
+
+\begin{situation}
+\label{situation-}
+$\tilde{\mathcal{C}},\tilde{\mathcal{D}}$ 
+triangulated categories admitting direct sums. 
+$\mathcal{C}\subset \tilde{\mathcal{C}}$, 
+$\mathcal{D} \subset\tilde{\mathcal{D}}$ 
+full essentially small triangulated subcategories. 
+$F:\tilde{\mathcal{C}}\to \tilde{\mathcal{D}}$ exact functor such that
+\begin{itemize}
+\item $F$ commutes with direct sums.
+\item $F$ has left adjoint 
+$\mathcal{G}:\tilde{\mathcal{D}}\to \tilde{\mathcal{C}}$.
+\item $F(\mathcal{C}) \subseteq \mathcal{D}$ and if $E \in \tilde{\mathcal{C}}$
+is such that $F(E) \in \mathcal{D}$ then $E \in \mathcal{C}$.
+\item $G(\mathcal{D}) \subseteq \mathcal{ C}$.
+\item For $E \in \mathcal{C}$, if $F(E)=0 \implies E=0$.
+\end{itemize}
+\end{situation}
+
+\begin{definition}
+\label{definition-vanishing-cohomologies-subcategories}
+Let $\mathcal{D}^{heart}$ be the heart of a $t$-structure on $\mathcal{D}$.
+Define
+\begin{align*}
+\mathcal{D}^{\leq 0}&=\{E \in \mathcal{D}|H^{i}(E)=0, i>0\}
+\mathcal{D}^{\geq 0}&=\{E \in \mathcal{D}|H^{i}(E)=0, i<0\}
+\end{align*}
+\end{definition}
+
+\begin{theorem}[Polischuk]
+\label{theorem-Polischuk}
+Let $\mathcal{D}^{heart}$ be the heart of a bounded $t$-structure on
+$\mathcal{D}$. If $FG:\mathcal{D} \to \mathcal{D}$ is right $t$-exact 
+(i.e. $FG(\mathcal{D}^{\leq 0})\subseteq \mathcal{D}^{\leq 0}$) 
+then 
+$$
+\mathcal{C}^{heart}=\{E \in \mathcal{C}|F(E) \in \mathcal{D}^{heart}\}
+$$
+is the heart of a bounded $t$-structure on $\mathcal{C}$.
+\end{theorem}
+
+\begin{example}
+\label{example-right}
+$f_*:D^b(X) \to D^b(Y)$, $f_*f^*(E)=E\otimes f_*\mathcal{O}_x$. 
+If this is right $t$-exact, then can induce $t$-structures, e.g. 
+$f:H \hookrightarrow Y$ hypersurface.
+$$
+E \to E \otimes f_*\mathcal{O}_H\to E\otimes \mathcal{O}_T(-H)[1]
+$$
+See recent paper by Chengi Li ``Real reduction …''
+\end{example}
+
+\begin{example}
+\label{example-Kuznetsov}
+$D^b(X)=\left<R,E\right>$, $i:R \to D^b(X)$. See [Kuznetsov]. There exists a
+semiorthogonal decomposition of $D_{qc}(X) \supset \tilde{R}$, $i^* \to i$,
+$$
+\mathbb{L}_{\left<E\right>}=ii^* :D^b(X) \to D^b(X)\qquad \text{right exact?}
+$$
+\end{example}
+
+The reader is really encouraged to solve the following exercise.
+
+\begin{exercise}
+\label{exercise-right-exact}
+Let $E \in \mathcal{D}^{heart}$, $S(E) \in \mathcal{D}^{heart}[1]$, then
+$\mathbb{L}_E$ is right exact.
+\end{exercise}
+
+\noindent
+{\bf Key homological algebra ingredient.} Let $\tilde{\mathcal{C}}^{\leq 0}$ 
+be the smallest full subcategory of $\tilde{\mathcal{C}}$ that
+\begin{itemize}
+\item contains $G(\mathcal{D}^{\leq 0})$,
+\item is closed under direct sum, extension, positive shift $[n]$, $n>0$.
+\end{itemize}
+$$
+\tilde{\mathcal{C}}^{\geq 0}:=\{E \in \tilde{\mathcal{C}}|
+\Hom(\tilde{\mathcal{C}}^{\leq 0}[1],E)=0\}.
+$$
+Then this is a $t$-structure on $\tilde{\mathcal{C}}$.
+
+\begin{example}
+\label{example-curve}
+Let $X$ be a smooth projective curve and $p \in X$ a point. Then
+$D_{qc}(X)^{\leq 0}$ contains $\mathcal{O}_p$ and is closed under ….
+$$
+D_{qc}(X)^{\geq 0}j_* \mathcal{O}_U/\mathcal{O}_X[-1] \to 
+\mathcal{O}_X \to j_*\mathcal{O}_U
+$$
+\end{example}
+
 \end{document}

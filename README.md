@@ -48,6 +48,10 @@ to delete all the byproducts of compilation (including pdf).
 
 #Other links
 
-3. [Google Chrome extension](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en&pli=1) to facilitate navigation:
-4. PDF viewer: [Sioyek](https://sioyek.info/)
+3. PDF viewer: [Sioyek](https://sioyek.info/)
+4. [Google Chrome extension](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en&pli=1) to facilitate navigation.
 5. Shell for Mac OS: [Oh My SSH](https://ohmyz.sh/)
+6. I use a window manager (for Mac) called Magnet, but there's also a free one 
+called Amethyst that might work just as well.
+7. I use a thing called AltTab to facilite swapping between windows using the
+   keyboard (on Mac again).

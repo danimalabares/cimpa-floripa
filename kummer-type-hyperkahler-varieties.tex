@@ -184,6 +184,10 @@ This was the classical content.
 
 \subsection{Mukai lattice}
 \label{subsection-Mukai-lattice}
+
+``The Mukai lattice is some sort of topological invariant that behaves better 
+with derived category.''
+
 $$
 \tilde{H}(S,\mathbb{Z})
 =H^{0}(S,\mathbb{Z})\oplus H^{2}(S,\mathbb{Z})\oplus H^{4}(S,\mathbb{Z})
@@ -780,5 +784,196 @@ D_{qc}(X)^{\geq 0}j_* \mathcal{O}_U/\mathcal{O}_X[-1] \to
 \mathcal{O}_X \to j_*\mathcal{O}_U
 $$
 \end{example}
+
+\section{Moduli of objects in derived category}
+\label{section-moduli-of-obejects-in-derived-category}
+
+\subsection{Moduli on a variety}
+\label{subsection-moduli-on-a-variety}
+
+Let $X$ be a scheme of finite type over $\mathbb{C}$.
+
+\begin{definition}
+\label{definition-perfect-complex}
+An object $E \in D^b(X)$ is a {\it perfect complex} if locally on $X$, $E$ is
+isomorphic to a bounded cx of locally free sheaves
+$D_{\text{perf}}(X)\subset D^b(X)$ subcategory of perfect cx. [?]
+\end{definition}
+
+\begin{remark}
+\label{remark-perfect}
+\begin{enumerate}
+\item $D_{perf}(-)$ is preserved under derived pullback.
+\item $X$ smooth $\implies$ $D_{\text{perf}}(X)=D^b(X)$.
+\end{enumerate}
+\end{remark}
+
+\begin{definition}
+\label{definition-universally-gluable}
+Given $T$ scheme of finite type over $\mathbb{C}$ and $E \in
+D_{\text{perf}}(X\times T)$, say $E$ is {\it universally gluable} over $T$ if
+for all $t \in T(\mathbb{C})$, $\text{Ext}^i(E_t,E_t)=0$ if $i<0$, where  $E_t$
+is the derived pullback.
+\end{definition}
+
+\begin{example}
+\label{example-locally-free}
+Locally free on $X \times T$.
+\end{example}
+
+We will consider the following functor to formulate the moduli problem:
+
+\begin{definition}
+\label{definition-moduli-stack-of-perfectly-univerasally-gluable-objects}
+Let $X$ be a smooth projective variety over $\mathbb{C}$. The {\it moduli stack
+of perfectly universally gluable objects} is the functor
+\begin{align*}
+\mathcal{M}_{\text{proj}}(X): (\Sch^{ft}/\mathbb{C})^{op} 
+&\longrightarrow \mathit{Gpds} \\
+T &\longmapsto  \{E \in D_{\text{perf}}(X\times T)\text{ uniersally gluable}/T\}
+\end{align*}
+
+\end{definition}
+
+\begin{theorem}[Lieblich]
+\label{theorem-Lieblich}
+$\mathcal{M}_{\text{proj}}(X)$ is an algebraic stack locally of finite type over
+$\mathbb{C}$.
+\end{theorem}
+
+\subsection{Moduli of $\sigma$-semistable objects}
+\label{subsection-moduli-of-sigma-semistable-objects}
+
+Let $X$ be a smooth projective variety over $\mathbb{C}$. Fix
+$\sigma=(A,Z)\in\text{Stab}_{\Lambda}(X)$, $v:K_0(X) \to \Lambda$. Fix $w \in
+\Lambda$, define 
+\begin{align*}
+\mathcal{M}_{\sigma}(w):(\Sch^{ft}/\mathbb{C})^{op} 
+ &\longrightarrow  \mathit{Gpds} \\
+T &\longmapsto \left\{ \substack{\text{perfect complex $E$ on $X\times T$ s.t.} 
+\\ \text{$\forall t \in T(\mathbb{C})$, $E_t$ is in $\mathcal{A}$}\\
+\text{$\sigma$-ss, $V(E_t)=w$}} \right\} 
+\end{align*}
+
+\medskip\noindent
+{\bf Hard problems.}
+\begin{enumerate}
+\item Are $\mathcal{M}_{\sigma}^s(w) \subset \mathcal{M}_{\sigma}(w)
+\subset \mathcal{M}_{\text{proj}}(X)$.
+\begin{enumerate}
+\item Open.
+\item Finite type?
+\end{enumerate}
+Known for $X$ surface, $\sigma$ via tilting (Toda). 
+\begin{itemize}
+\item \text{[}Halper-Leistner-Robotis '25].
+\item Proper SC.
+\end{itemize}
+\item Do there exist maps to schemes
+$$
+\xymatrix{
+\mathcal{M}_{\sigma}(w)&M_\sigma(w)\\
+\mathcal{M}_{\sigma}^s(w)\ar[r]\ar@{^{(}->}[u]& M_{\sigma}^s(w)\ar@{^{(}->}[u] 
+}
+$$
+where $M_\sigma(w)$ is projective and paramatrizes s-equivalent classes.
+\end{enumerate}
+
+\begin{definition}
+\label{definition-good-moduli-space}
+Let $\mathcal{M}$ be an algebraic stack, $M$ algebraic space. 
+$\pi:\mathcal{M} \to M$ is a {\it good moduli space} if
+\begin{enumerate}
+\item $\pi_* :\text{QCoh}(\mathcal{M}) \to \text{QCoh}(M)$ is exact.
+\item $\mathcal{O}_M \xrightarrow{\simeq }\pi_*\mathcal{O}_{\mathcal{M}}$
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+\label{example-good-moduli-space}
+$X$ affine, $G$ linear reductive $G \mathbb{y} X$, $[X/G] \to X/\!/G$ is a good
+moduli space. {\bf Exercise:} think this through!
+\end{example}
+
+\begin{theorem}[Alper-Halpern-Leistor-Heisloth]
+\label{theorem-AHLH}
+Good moduli space exists if the stack satisfies $\Theta$-reductivity and
+S-completeness.
+\end{theorem}
+
+Where, roughly,
+\begin{itemize}
+\item $\Theta$-reductivity means ``HN filtration specializes'',
+\item S-completeness means: two specializations of a family of objects differ by
+ ``elementary modification''.
+\end{itemize}
+
+\begin{example}[Elementary modification I]
+\label{example-elementary-modification}
+$\mathbb{P}_0=\mathbb{P}^1 \times \{0\} = \mathbb{P}^1 \times \mathbb{A}^1$,
+$$
+\xymatrix{
+0\ar[r]&  K \ar[r]&  \mathcal{O}_{\mathbb{P}^1\times\mathbb{A}^1}^{\oplus 2}
+\ar[rr]\ar@{->>}[rd]&  &  \mathcal{O}_{\mathbb{P}^0}(1) \ar[r]&  0\\
+&  &  &  \mathcal{O}_{\mathbb{P}_0^{\oplus 2}}\ar@{->>}[ur]
+}
+$$
+\end{example}
+
+\begin{example}[Elementary modification II]
+\label{example-elementary-modification-2}
+$C \times \mathbb{A}^1$, $E$ rank 2 vector bundle such that
+$$
+\xymatrix{
+0\ar[r]&\mathcal{L}_1\ar[r]&E|_{co}\ar[r]&\mathcal{L}\ar[r]&0
+}
+$$
+for $\text{deg}\mathcal{L}_1=\text{deg}\mathcal{L}^2$.
+$$
+\xymatrix{
+0\ar[r]&  K \ar[r]& E\ar[rr]\ar@{->>}[rd]
+&  &  \mathcal{L}_2 \ar[r]&  0\\
+&  &  &  E|_{c_0}\ar@{->>}[ur]
+}
+$$
+\end{example}
+
+\medskip\noindent
+{\bf Upshot.} $\mathcal{M}_{\sigma}(w) \to M_{\sigma}(w)$ good moduli exist.
+
+\begin{itemize}
+\item Bayer-Macri: there exists a (numerical) divisor class on $M_{\sigma}(w)$
+that intersects every curve positively.
+\end{itemize}
+
+\subsection{Mukai's theorem for K3 category}
+\label{subsection-Mukais-theorem-for-K3-category}
+
+\begin{proposition}
+\label{proposition-4-fold-Mukai-lattice}
+$X$ cubic 4-fold. Then there exists a Mukai lattice (cf Subsection
+\ref{subsection-Mukai-lattice}) $\tilde{H}(Ku_X';\mathbb{Z})$ with
+\begin{itemize}
+\item Weight 2 Hodge structure,
+\item Pairing compatible with $-\chi$.
+\end{itemize}
+\end{proposition}
+
+\begin{theorem}[BLMNPS]
+\label{theorem-BLMNPS}
+Let $0 \neq  v \in \tilde{H}_{\text{alg}}(Ku_X;\mathbb{Z})$ primitive, $\sigma$
+generic w.r.t. $v$. Then $\mathcal{M}_{\sigma}(v)$ has a good moduli space
+$M_{\sigma}(v)\neq \emptyset$ 
+smooth projective hyperkähler variety of dimension $v^2+2$,
+deformation equivalent to $K3^{\left[ \frac{v+1}{2 } \right] }$.
+\end{theorem}
+
+(The deepest part of this theorem is showing that
+$M_{\sigma}(v)$ is not empty!)
+
+\medskip\noindent
+There exists a rank 2 lattice contained in $\tilde{H}_{alg}(Ku_X;\mathbb{Z})$
+for any $X$ $\rightsquigarrow $ $M_\sigma(v)$ deforms in $20$-dimensional
+family.
 
 \end{document}

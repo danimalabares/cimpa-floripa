@@ -538,7 +538,7 @@ $$
 \begin{exercise}
 \label{exercise-E-is-a-sheaf}
 Let $E \in \text{Coh}^{B,H}(X)$.
-If $\text{ch}_0(E)>0$ and $E$ is $\nu_{B,H,a}$-semustable for all $a\gg 0$, then
+If $\text{ch}_0(E)>0$ and $E$ is $\nu_{B,H,a}$-semistable for all $a\gg 0$, then
 $E$ is a sheaf. Moreover, $E$ is $\mu_{B,H}$-semistable.
 \end{exercise}
 
@@ -557,10 +557,111 @@ $$
 $$
 \mathcal{F}_{B,H,a}=\{E \in \text{Coh}^{B,H}(X):\text{HN factors with }
 \nu_{B,H,a}\leq 0\}
-
 $$
 $$
 \mathcal{A}=\left<\mathcal{F}_{B,H,a}[1],\mathcal{T}_{B,H,a}\right>
 $$
 supports a stability condition.
+
+\section{GBG inequality}
+\label{section-GBG-inequality}
+
+Here's the construction so far:
+$$
+\xymatrixrowsep{1.4em}
+\xymatrix{
+\textit{Coh}(X)\ar[r]^{\substack{\text{first} \\ \text{tilt}}}
+&  \textit{Coh}^{B,H}(Z)\ar[r]^{\substack{\text{second} \\ \text{tilt}}}
+&  \mathcal{A}^{B,H,\alpha}\\
+\underbrace{\mu_{B,H}}_{\text{Mumford stability}}
+&  \underbrace{\nu_{B,H,\alpha}}_{\text{Tilt}}
+&  \underbrace{\lambda_{B,H,\alpha,s}}
+_{\substack{\text{Bridgeland} \\ \text{stability}\\\text{when possible}}}\\
+\Delta \geq 0
+&  \Delta_{B,H}\geq 0
+&\substack{\text{Conjecture} \\ \text{generalized}\\\text{BG inequality}}
+}
+$$
+And
+\begin{align*}
+Z_{\beta,H,\alpha,s}&=-\left(ch^B_3-\left(s+\frac{1}{6}\right)\alpha^2
+H^2ch_1^B)\right)\qquad s>0\\
+&+i\left(Hch_2^B-\frac{\alpha^2}{2}H^3ch_0\right) 
+\end{align*}
+
+\medskip\noindent
+{\bf GBG-inequality.} If $E$ is $\nu_{B,H,\alpha}$-semistable,
+\begin{equation}
+\label{equation-GBG}
+\begin{aligned}
+H ch_2^B(E)-\frac{\alpha^2}{2}H^3 ch_0(E)&=0\\
+\implies ch_3^{B}-\frac{1}{6}\alpha^2H^2ch_1^B(E)&\leq 0
+\end{aligned}
+\end{equation}
+
+\medskip\noindent
+{\bf Bayer-Maci-Toda.} If Eq. \ref{equation-GBG} is true then 
+$(\mathcal{A}^{B,H,\alpha},Z_{B,H,\alpha,s})$ is a strability condition.
+
+\section{Remarks on $\nu_{B,H,\alpha}$-stability}
+\label{section-remarks-on-nu-BHalpha-stability}
+Keep in mind that
+$$
+\nu_{B,H,\alpha}=\frac{Hch_2^B-\frac{\alpha^2}{2}ch_0H^3}
+{H^2 ch_1^B}
+$$
+and
+$$
+L \in \textit{Coh}^{B,H}(X) \qquad (L[1])
+$$
+as long as
+$$
+H^2ch_1^B(L)>0 \qquad (H^2ch_1^B(L[1])\leq 0.
+$$
+\medskip
+If $E$ is $\nu_{B,H,\alpha}$-semistable for $\alpha\gg 0$ then 
+$E\in\textit{Coh}(X)$ and is semistable with respect to the stability given by
+$$
+q(t)=t \frac{H^2 ch_1}{ch_0}+ \frac{H ch_2}{ch_0},\qquad t\gg 0
+$$
+and if $E$ is $q(t)$-semistable then $E$ is $\nu_{B,H,\alpha}$-semistable for 
+$\frac{\alpha^2}{2}H^2>\mu_{B,H}(E)\Delta_{B,H}(E)$.
+
+If $X$ has Picard rank $\rho(X)=1$ then 
+ $$
+\Delta_{B,H}=H^3\Delta
+$$
+If $L$ is a line bundle $\Delta_{B,H}(L)=H^3\Delta(L)=0$ (as $L[1])$, 
+then $L$ is 
+$\nu_{B,H,\alpha}$-semistable as long as $L \in \textit{Coh}^{B,H}(X)$ 
+(as $L[1])$
+
+\medskip\noindent
+{\bf Idea.} Look for counterexamples with $ch_0=0$. When does $\mathcal{O}_D$
+for $D\geq 0$ divisor on $X$ (3-fold) produces a counterexample?
+
+Fix $H$ ample, $B=\beta H$. We need:
+\begin{enumerate}
+\item $\mathcal{O}_D$ is $\nu_{\beta,\alpha}$-semistable.
+\item $\nu_{\beta,\alpha}(\mathcal{O}_D)=0$.
+\item $ch_3^B(\mathcal{O}_D)-\frac{\alpha^2}{6}H^2ch_1^B(\mathcal{O}_D)>0$.
+\end{enumerate}
+
+\begin{lemma}
+\label{lemma-counterexample}
+If $D \geq 0$ satisfies
+$$
+D^3>\frac{(DH^2)^3}{4(H^3)^2}+\frac{3}{4}\frac{(D^3H)^2}{DH^2}
+$$
+then $\mathcal{O}_D$ is a counterexample for the GBG inequality
+\ref{equation-GBG}.
+\end{lemma}
+
+\begin{example}
+\label{example-}
+Let $Y$ be any smooth projective 3-fold, $X=Bl_pY$, $D$ the exceptional divisor,
+$L=\pi^*A$ with $A$ ample, $H=mL-D$ ample on $X$.
+\end{example}
+
+[Slides]
 \end{document}

@@ -1,11 +1,14 @@
 \input{preamble}
 \begin{document}
 
-\title{Kummer Type Hyperkähler Varieties}
+\title{Noncommutative Abelian Surfaces and Kummer Type Hyperkähler Varieties}
 \maketitle
 
-Minicourse by Xiaolei Zhao, CIMPA school Florianópolis 2025.
+\noindent
+Minicourse by Xiaolei Zhao (University of California, Santa Barbara (CA), USA), 
+CIMPA school Florianópolis 2025.
 
+\medskip\noindent
 Notes at 
 \href{http://github.com/danimalabares/cimpa-floripa}
 {github.com/danimalabares/cimpa-floripa}
@@ -976,4 +979,170 @@ There exists a rank 2 lattice contained in $\tilde{H}_{alg}(Ku_X;\mathbb{Z})$
 for any $X$ $\rightsquigarrow $ $M_\sigma(v)$ deforms in $20$-dimensional
 family.
 
+\section{Noncommutative abelian surfaces and Hyperkähler of Kummer type}
+\label{section-noncommutative-abelian-surfaces-and-HK-of-Kummer-type}
+
+Joint work with Boyer, Perry, Petrusi ('25?)
+
+\subsection{Polarized hyperkähler}
+\label{subsection-polarized-hyperkahler}
+
+Recall Definition \ref{definition-hyperkahler-variety}. In the past lectures we
+have seen that the spaces $K3^{[n]}$ are examples.
+
+Let $A$ be an abelian surface 
+($A \cong \mathbb{C}^2/\Lambda \hookrightarrow\mathbb{P}^N$). 
+The fact that abelian surfaces are not abelian makes $M_H(v)$, the moduli of
+$H$-semistable sheaves of topological class $V$ on $A$, not abelian. So we
+consider
+$$
+\xymatrix{
+M_H(v)\ar[d]_{\text{alb}}\\
+\hat{A}\times A
+}
+$$
+where we must assume that $v$ is primitive, $v^2>0$ and $\sigma/H$ is $v$-gen.
+Then $M:=\text{alb}^{-1}(0)$ is a hyperkähler variety called {\it generalized
+Kummer}.
+
+Now consider the even cohomology $H^{ev}(Z,\mathbb{Z})$. Let
+$$
+H^{ev}(A;\mathbb{Z})\supset V^\perp \xrightarrow{\theta,\simeq }H^{2}(M)
+$$
+(Torelly theorem, […, Verbitsky])
+
+\begin{remark}
+\label{remark-positive-definte-rank-2-lattice}
+$$
+\Lambda=\left<v,\theta^{-1}(H)\right>\subset H^{ev}_{alg}(A,\mathbb{Z})
+$$
+positive definite rank 2 lattice.
+\end{remark}
+
+{\bf Goal.} Fix $\Lambda$. Look for: $\Lambda$-polarized deformation of $D^b(A)$
+(i.e. $\Lambda$ remains alg.).
+
+\subsection{Deformations via equivariant categories}
+\label{subsection-deformations-via-equivariant-categories}
+
+Consider an involution on an abelian surface, $\mathbb{Z}/2 \mathbb{y} A$. 
+This induces an action $ \mathbb{Z}/2 \mathbb{y}D^b(A)$.
+
+There are 16 singular points in the quotient $A/(\mathbb{Z}/2)$. The resolution
+$\widetilde{A/(\mathbb{Z}/2)=S}$ is the so-called {\it Kummer K3}. (Another way
+to see this is considering the quotient stack $A$ by  $\mathbb{Z}/2$, the result
+is ``basically'' equivalent to $S$.)
+
+[BKR] $D^b(S)\cong D^b(A)^{\mathbb{Z}/2}$.
+
+[Elagin] $D^b(A) \cong D^b(S)^{\widehat{\mathbb{Z}/2}}$ where
+$\widehat{\mathbb{Z}/2}$ is an involution acting on the derived category of $S$,
+and we explain it next: 
+there are 16 exceptional divisors $E_1,\ldots,E_{16}\subset S$. The involution 
+is
+$$
+(- \otimes \mathcal{L})\cdot \prod_{i=1}^{16}ST_{\mathcal{O}_{E_i}(-1)}.
+$$
+
+\medskip\noindent
+{\bf Key 1.} In order to deform $D^b(A)$, we only need to deform
+$D^b(S)$ together with its involution.
+
+\medskip\noindent
+{\bf Definition/Proposition.} 
+\begin{itemize}
+\item The derived Kummer lattice $\tilde{K}\subset\tilde{H}^*(S;\mathbb{Z})$ 
+is the $(-1)$-eigenspace of $\widehat{\mathbb{Z}/2}$ action on
+$\tilde{H}(S;\mathbb{Z})$.
+\item Spanned by $(0,2E_i,-1)$.
+\end{itemize}
+
+\medskip\noindent
+{\bf General theory (for deforming K3 surfaces).} Due to Huybrechts, Toda,
+Addington-Thomas. To deform $D^b(S)$ and its $\widehat{\mathbb{Z}/2}$-action is
+equivalent to deforming $D^b(S)$ such that $\tilde{K}$ remains algebraic.
+
+What need to remain algebraic under deformation?
+\begin{itemize}
+\item $\tilde{K}^{16}$ (so that the involution deforms).
+\item $\Lambda^2$.
+\end{itemize}
+[The dimension of the moduli space must then be $22-16=4$.]
+
+\begin{lemma}
+\label{lemma-}
+$$
+\left<\tilde{K},\Lambda\right>\supset U=\begin{pmatrix}
+0&1\\ 
+1&0
+\end{pmatrix}
+$$
+$$
+\underbrace{\left<\tilde{K},\Lambda\right>}_{(2,16)}
+=\underbrace{U}_{(1,1)}\oplus\underbrace{\Lambda_T}_{(1,15)}
+$$
+\end{lemma}
+
+\medskip\noindent
+{\bf Key 2.} There exists
+\begin{align*}
+\Phi: D^b(S) &\longrightarrow D^b(T) \\
+\tilde{H}(S) & \tilde{H}(T)
+\left<\tilde{K}, U\right>\quad U &\longmapsto H^0 \oplus H^4\\
+U \oplus \Lambda_T\quad \Lambda_T &\longmapsto \Lambda'_T \subset H^2
+\end{align*}
+where $ T$ is a K3 surface and $\tilde{H}(S) \supset \left<
+\tilde{K},\Lambda\right>=U\oplus \Lambda_T$. Deform $T$ as a
+$\Lambda_T$-polarized K3 surface.
+
+Cine $\tilde{K}$ remains algebraic, invariant deformations w/ $D^b(T)$ take
+the equiv. category.
+
+\begin{theorem}
+\label{theorem-exists-quasi-finit-dominant-map}
+There exists a quasi-finite dominant map
+\begin{align*}
+U  &\longrightarrow \text{Mod}_{\Lambda_T}^{K3}
+\end{align*}
+such that $u \in U$. $D^b(T_u)^{\widehat{\mathbb{Z}/2}}=$ 4-dimensional family
+of categories deforming.
+\end{theorem}
+
+\begin{theorem}
+\label{theorem-}
+For each $u \in U$, there exists an involution $\widehat{\mathbb{Z}/2}$
+stability condition on $D^b(T_u)$.
+\end{theorem}
+
+From these two theorems we obtain
+$$
+\xymatrix{
+\substack{\text{Kummer} \\\text{type}\\ \text{HK}}\to 
+\mathcal{M}_{\sigma}(D^b(T_u)^{\widehat{\mathbb{Z}/2}},v)\ar[d]^{alb}\\
+\text{abelian 4-fold}
+}
+$$
+
+\begin{definition}
+\label{definition-Weil-type}
+An abelian 4-fold $W$ is of {\it Weil type} if 
+$\mathbb{R}(\sqrt{-d}) \hookrightarrow \text{End}_{\mathbb{Q}}(W)$ for
+$d\in\mathbb{Z}_+$ along with some mild condition.
+\end{definition}
+
+Let $\Lambda=\left<v,w\right>$. 
+Consider the abelian category $\mathcal{A}$ nc abelian surface. [In fact, 
+$\text{Aut}^0(\mathcal{A})$ is an abelian 4-fold.]
+$$
+\xymatrix{
+M_\sigma(v)\ar[dr]_{alb_v}&  \text{Aut}^0(\mathcal{A})\ar[l]\ar[r]
+\ar@/^{.5pc}/[d]^{c_w}\ar@/^{-0.5pc}/[d]_{c_v}
+& M_\sigma(w)\ar[dl]^{alb_w}\\
+&\text{Alb}(\mathcal{A})
+}
+$$
+\begin{theorem}
+\label{theorem-}
+$c_w^{-1} \circ c_v$ is an endomorphism of Weil type.
+\end{theorem}
 \end{document}

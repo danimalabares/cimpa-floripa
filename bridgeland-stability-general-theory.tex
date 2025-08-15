@@ -563,8 +563,8 @@ $$
 $$
 supports a stability condition.
 
-\section{GBG inequality}
-\label{section-GBG-inequality}
+\section{GBG inequality conjecture}
+\label{section-GBG-inequality-conjecture}
 
 Here's the construction so far:
 $$
@@ -636,7 +636,9 @@ then $L$ is
 $\nu_{B,H,\alpha}$-semistable as long as $L \in \textit{Coh}^{B,H}(X)$ 
 (as $L[1])$
 
-\medskip\noindent
+\section{Search for counterexamples}
+\label{section-search-for-counterexamples}
+
 {\bf Idea.} Look for counterexamples with $ch_0=0$. When does $\mathcal{O}_D$
 for $D\geq 0$ divisor on $X$ (3-fold) produces a counterexample?
 
@@ -664,4 +666,224 @@ $L=\pi^*A$ with $A$ ample, $H=mL-D$ ample on $X$.
 \end{example}
 
 [Slides]
+
+\section{Concrete constructions}
+\label{section-concrete-constructions}
+
+How is a wall equation? Suppose that $\dim X=2$, or even better that $X=
+\mathbb{P}^2$. Also let 
+$\Gamma=\supset \oplus \supset \oplus \frac{1}{2}\mathbb{Z}$ and 
+$\nu=(ch_0,ch_1,ch_2):=(r,c,d)$.
+
+\begin{align*}
+\nu_{\beta,\alpha}&=\frac{ch_2^\beta-\frac{\alpha^2}{2}ch_0H^2}{H ch_1^\beta}\\
+&=\frac{ch_2-\beta ch_1+\left(\frac{\beta^2}{2}-
+\frac{\alpha^2}{2}\right)ch_0}{ch_1-\beta ch_0}
+\end{align*}
+A wall in the $(\beta,\alpha)$-plane is produced by an exact sequence in 
+$\textit{Coh}^\beta(\mathbb{P}^2)$
+$$
+\xymatrix{
+0\ar[r]&A\ar[r]&E\ar[r]&B\ar[r]&0
+}
+$$
+with $\nu_{\beta,\alpha}(A)=\nu_{\beta,\alpha}(E)$ and $ch(E)=V$.
+
+\medskip\noindent
+First: numerics: $w=(r',c',d')$ and solve
+$\nu_{\beta,\alpha}(w)=\nu_{\beta,\alpha}(v)$.
+
+\begin{align*}
+\beta^2-2\beta\left(\frac{rd'-r'd}{rc'-r'c}\right)+\alpha^2&=
+\frac{d c'-d'c}{rc'-r'c}
+\end{align*}
+$$
+c=\frac{rd'-r'd}{rc'-r'c},\qquad R=\sqrt{c^2+\frac{d c'-d'c}{rc'-r'c}}
+$$
+[Picture.] 
+Look for wall for 1-dimensional sheaves ($r=0$, $c>0$). $c=\frac{d}{c}$ same
+center.
+
+\begin{remark}
+\label{remark-walls-coincide-or-dont-intersect}
+Walls either coincide or they don't intersect. [Picture.]
+\end{remark}
+
+\begin{lemma}[Bertan's lemma]
+\label{lemma-Bertan}
+If an object $A$ destabilizes $E$ at some point then it destabilizes $E$ at
+every point of the corresponding wall.
+\end{lemma}
+
+\medskip\noindent
+Take $\beta=\frac{d}{c}$. If $A \hookrightarrow E  \xrightarrow{surj.} B$ is 
+short exact in $\textit{Coh}^\beta(\mathbb{P}^2)$. 
+\begin{itemize}
+\item If $ch(E)=(0,c,d)$ and $E$ is
+a sheaf then $A$ is a sheaf, just not a subsheaf.
+$$
+\xymatrix{
+0\ar[r]&\underbrace{\mathcal{H}^{-1}A}_{\implies 0}\ar[r]
+&  \underbrace{\mathcal{H}^{-1}E}_{=0}\ar[r]
+&  \mathcal{H}^{-1}B\ar[r]
+&  \mathcal{H}^0A\ar[r]&  \mathcal{H}^0E\ar[r] &  \mathcal{H}^0B\ar[r]&0
+}
+$$
+$\implies$ $a= \mathcal{H}^0A$ sheaf.
+\begin{enumerate}
+\item $A$ produces a semi-circular wall only when $ch_0(A)>0$.
+\item $0 \leq  ch_1^\beta(A) \leq ch_1^\beta(E)=c$. 
+This says that there are finitely many possibilities for $c_1^\beta(A)$.
+\item At the wall $W_{A,E}$ we have $A$ is $\nu_{\beta,\alpha}$-semistable.
+$$
+\Delta_{\beta,\alpha}(A)\geq 0
+$$
+$$
+ch_1^\beta(A)^2-2ch_0(A)ch_2^\beta(A)\geq 0
+$$
+$$
+ch_1^\beta(A)^2\geq 2ch_0(A)ch_2^\beta(A)
+$$
+\item Wall equation
+\begin{align*}
+\nu_{\frac{1}{c}\alpha}(A)&=\nu_{\frac{1}{c},\alpha}(E)\\
+&=\frac{ch_2(E)-\beta ch_1(E)}{ch_1(E)}\\
+&=\frac{d-\frac{d}{c}c}{c}=0
+\end{align*}
+\begin{align*}
+ch_2^\beta(A)-\frac{\alpha^2}{2}ch_0^\beta(A)&=0\\
+ch_2^\beta(A)=\frac{\alpha^2}{2}ch_2^\beta(A)& \geq 0
+\end{align*}
+$\implies$ {\bf walls are finite}.
+\end{enumerate}
+\end{itemize}
+
+\medskip\noindent
+Moduli of $\nu_{\beta,\alpha}$-semistable objects are projective for
+$X=\mathbb{P}^2$. [Picture of walls as nested circles in a plane.] 
+$\nu_{\beta \alpha}$-semistability $\implies$ King's $\Theta$-semistability.
+
+\begin{example}
+\label{example-}
+$v=(0,4,-4)$, $M_H(v)\leftarrow$ sheaves can be found in one of the following
+short exact sequences in $\textit{Coh}^{-1}(\mathbb{P}^2)$.
+
+[Duzét-Muican]
+
+\noindent
+Codimension 3:
+$$
+\xymatrix{
+0\ar[r]&\mathcal{O}(1)\ar[r]&\mathcal{F}\ar[r]&\mathcal{O}(-2)\ar[r]&0
+}
+$$
+Codimension 1:
+$$
+\xymatrix{
+0\ar[r]&\mathcal{I}_P(1)\ar[r]&\mathcal{F}\ar[r]
+&\mathcal{I}_q^\vee(-3)[q]\ar[r]&0
+}
+$$
+Codimension 0:
+$$
+\xymatrix{
+0\ar[r]&2\mathcal{O}\ar[r]&\mathcal{F}\ar[r]&\mathcal{O}(-2)[1]\ar[r]&0
+}
+$$
+The first wall exchanges
+$$
+\xymatrix{
+0\ar[r]&\mathcal{O}(1)\ar[r]&\mathcal{F}\ar[r]&\mathcal{O}(-3)[1]\ar[r]&0
+}
+$$
+for (upon wall crossing)
+$$
+\xymatrix{
+0\ar[r]&\mathcal{O}(-3)[1]\ar[r]&E^*\ar[r]&\mathcal{O}(1)\ar[r]&0
+}
+$$
+\begin{align*}
+\text{Ext}^1(\mathcal{O}(1),\mathcal{O}(-3)[1])
+=\text{Ext}^2(\mathcal{O}(1),\mathcal{O}(-3))
+\cong \Hom(\mathcal{O},\mathcal{O}(1))^\vee
+\end{align*}
+\end{example}
+
+\begin{theorem}[Li-Zhao]
+\label{theorem-Li-Zhao}
+IF $v$ is primitive and $\sigma,\sigma'$ are generic geometric
+ with respect to $ v$ then
+$\mathcal{M}_{\sigma}(v)$ and $\mathcal{M}_{\sigma'}(v)$ are birational.
+\end{theorem}
+
+\medskip\noindent
+We finish this minicourse with another application of Schur's lemma:
+
+\begin{theorem}[Koseki]
+\label{theorem-Koseki}
+Let $X$ be a smooth projective surface over $k=\overline{k}$ with
+$\text{char}(k)>0$, then there is a constant $C_{[X]}\geq 0$ and dependending
+only on the birational equivalence clas of $X$ such that
+$$
+\tilde{\Delta}(E)=\Delta(E)+C_{[X]}ch_0^2(E)\geq 0
+$$
+for any $\mu_H$-semistable sheaf.
+\end{theorem}
+
+Morever
+\begin{enumerate}
+\item If $X$ is minimal and of general type,
+$$
+C_{[X]}=2+5K_X^2-\chi(\mathcal{O}_X)
+$$
+\item If $K(X)=1$ ($K$ is the Kodaira dimension) and $X$ is quasi-elliptic then
+$$
+C_{[X]}=2-\chi(\mathcal{O}_X),\qquad \text{[char 2+3]}
+$$
+\item $C_{[X]}=0$
+\end{enumerate}
+
+\medskip\noindent
+{\bf Corollary.}
+$$
+Z_{B,H,\alpha}^{C_{[X]}}=-\left(\cong_2^B-
+\left(\frac{C_{[X]}}{2H^2}+\frac{\alpha^2}{2}\right)ch_0H^2\right)
++ich_1^B(X)
+$$
+is a stability condition on $\textit{Coh}^{B,H}(X)$.
+
+\begin{remark}
+\label{remark-inequality}
+$$
+\tilde{\Delta}_{B,H}=\Delta_{B,H}+ch_0^2C_{[X]}\leq 2
+$$
+on any $\nu_{B,H,\alpha}^{C_{[X]}}$-semistable object.
+\end{remark}
+
+\begin{lemma}[Low key lemma]
+\label{lemma-low-key-lemma}
+\begin{itemize}
+\item For $\alpha\gg 0$, $\nu$-semistable are the Gieseker-semistable sheaves.
+\item IF $\alpha^2H^2>\mu_{B,H}(E)\tilde{\Delta}_{B,H}(E)$ and if $E$ is
+Gieseker-semistable $\implies$ $E$ is Bridgeland semistable.
+\end{itemize}
+\end{lemma}
+
+\begin{theorem}
+\label{theorem-vanishing}
+$H^2>6 C_{[X]}$ then $H^1(H \otimes K_X)=0$. (If $\text{char}(k)=0$ we can take
+$C_{[X]}=0$.)
+\end{theorem}
+
+\begin{proof}[Proof idea.]
+Find a stability condition $\sigma=(Z,s)$ such that
+\begin{enumerate}
+\item $H$,  $\mathcal{O}[1] \in \mathcal{A}$ are $\sigma$-semistable.
+\item $\mu_Z(H)>\mu_Z(\mathcal{O}[1])$ 
+$$
+\implies H^{1}(H \otimes K_X) \cong \text{Ext}^1(H,\mathcal{O})^\vee
+= \Hom(H_1\mathcal{O}[1])
+$$
+\end{enumerate}
+\end{proof}
 \end{document}
